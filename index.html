@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tembici Rats Challenge - Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; }
+        .header { background: linear-gradient(135deg, #378ADD, #0F6E56); color: white; padding: 1.5rem; text-align: center; }
+        .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .tabs { display: flex; background: #f9f9f9; border-bottom: 1px solid #ddd; overflow-x: auto; }
+        .tab-btn { flex: 1; padding: 1rem; border: none; background: transparent; cursor: pointer; font-weight: 500; color: #666; border-bottom: 3px solid transparent; transition: all 0.3s; min-width: 100px; white-space: nowrap; }
+        .tab-btn.active { background: white; color: #378ADD; border-bottom-color: #378ADD; }
+        .content { padding: 1.5rem; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .metric { background: #f9f9f9; padding: 1rem; border-radius: 8px; border-left: 4px solid #378ADD; text-align: center; }
+        .metric-value { font-size: 1.8rem; font-weight: bold; color: #378ADD; }
+        .metric-label { font-size: 0.85rem; color: #666; margin-top: 0.3rem; }
+        .chart-box { margin: 1.5rem 0; background: #f9f9f9; padding: 1rem; border-radius: 8px; }
+        .chart-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
+        .chart-container { position: relative; height: 350px; }
+        .chart-container-large { position: relative; height: 500px; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+        th { background: #378ADD; color: white; padding: 0.7rem; text-align: left; }
+        td { padding: 0.6rem; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f9f9f9; }
+        .info-box { background: #E6F1FB; border-left: 4px solid #378ADD; padding: 1rem; margin: 1rem 0; border-radius: 4px; font-size: 0.9rem; }
+        .podium { background: linear-gradient(135deg, #378ADD, #0F6E56); color: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin: 0.5rem; }
+        .podium.second { background: linear-gradient(135deg, #D85A30, #993C1D); }
+        .podium.third { background: linear-gradient(135deg, #534AB7, #3C3489); }
+        .podium-medal { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .podium-name { font-weight: bold; }
+        .podium-pts { font-size: 1.2rem; margin-top: 0.3rem; }
+        .top-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .week-tabs { display: flex; gap: 0.3rem; margin: 1rem 0; flex-wrap: wrap; }
+        .week-tab { padding: 0.4rem 0.8rem; border: 1px solid #ddd; background: white; border-radius: 4px; cursor: pointer; font-weight: 500; font-size: 0.85rem; transition: all 0.3s; }
+        .week-tab.active { background: #378ADD; color: white; border-color: #378ADD; }
+        .week-content { display: none; }
+        .week-content.active { display: block; }
+        .footer { background: #f9f9f9; padding: 1rem; text-align: center; color: #666; font-size: 0.85rem; border-top: 1px solid #ddd; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.5rem; } .content { padding: 1rem; } .chart-container { height: 250px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚴 Tembici Rats Challenge</h1>
+            <p style="font-size: 0.9rem;">Desafio de fitness do grupo | Atualizado em 7 de abril</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'overview')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(event, 'podium')">🏆 Podium</button>
+            <button class="tab-btn" onclick="switchTab(event, 'activities')">Atividades</button>
+            <button class="tab-btn" onclick="switchTab(event, 'weekly')">Evolução</button>
+            <button class="tab-btn" onclick="switchTab(event, 'weekly-detail')">Semanal</button>
+            <button class="tab-btn" onclick="switchTab(event, 'ranking')">Ranking</button>
+        </div>
+
+        <div class="content">
+            <!-- OVERVIEW -->
+            <div id="overview" class="tab-content active">
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">810</div>
+                        <div class="metric-label">Check-ins</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">6.648</div>
+                        <div class="metric-label">Pontos</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">693.5h</div>
+                        <div class="metric-label">Horas</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20/21</div>
+                        <div class="metric-label">Participantes</div>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-title">Top 5 Participantes</div>
+                    <div class="chart-container">
+                        <canvas id="overviewChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>🎯 Resultado:</strong> Daniel Silva lidera com 775.6 pontos, seguido por Victor Falcão (673.0) e Thiago Boufelli (652.0). Competição acirrada!
+                </div>
+            </div>
+
+            <!-- PODIUM -->
+            <div id="podium" class="tab-content">
+                <h2 style="margin: 1rem 0; text-align: center;">🏆 Pódio Final</h2>
+                <div class="top-3">
+                    <div class="podium">
+                        <div class="podium-medal">🥇</div>
+                        <div class="podium-name">Daniel Silva</div>
+                        <div class="podium-pts">775.6</div>
+                        <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.9;">94 atividades | 73.4h</div>
+                    </div>
+                    <div class="podium second">
+                        <div class="podium-medal">🥈</div>
+                        <div class="podium-name">Victor Falcão</div>
+                        <div class="podium-pts">673.0</div>
+                        <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.9;">82 atividades | 75.3h</div>
+                    </div>
+                    <div class="podium third">
+                        <div class="podium-medal">🥉</div>
+                        <div class="podium-name">Thiago Boufelli</div>
+                        <div class="podium-pts">652.0</div>
+                        <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.9;">80 atividades | 62.1h</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">4º ao 10º Lugar</h3>
+                <table>
+                    <thead><tr><th>Rank</th><th>Participante</th><th style="text-align: right;">Pontos</th></tr></thead>
+                    <tbody>
+                        <tr><td>4º</td><td>Gabi Gomes</td><td style="text-align: right;"><strong>585.1</strong></td></tr>
+                        <tr><td>5º</td><td>Sthefany Simioni</td><td style="text-align: right;"><strong>577.5</strong></td></tr>
+                        <tr><td>6º</td><td>Tomas</td><td style="text-align: right;"><strong>518.5</strong></td></tr>
+                        <tr><td>7º</td><td>Olivia Paiva</td><td style="text-align: right;"><strong>484.9</strong></td></tr>
+                        <tr><td>8º</td><td>Carolina Villa</td><td style="text-align: right;"><strong>458.3</strong></td></tr>
+                        <tr><td>9º</td><td>André Bifulco</td><td style="text-align: right;"><strong>376.3</strong></td></tr>
+                        <tr><td>10º</td><td>Gabs (Miranha)</td><td style="text-align: right;"><strong>359.7</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ATIVIDADES -->
+            <div id="activities" class="tab-content">
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">25</div>
+                        <div class="metric-label">Tipos</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">744</div>
+                        <div class="metric-label">Top 10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">91.9%</div>
+                        <div class="metric-label">Percentual</div>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-title">Top 10 Atividades</div>
+                    <div class="chart-container">
+                        <canvas id="activitiesChart"></canvas>
+                    </div>
+                </div>
+
+                <table>
+                    <thead><tr><th>Atividade</th><th style="text-align: right;">Check-ins</th><th style="text-align: right;">%</th></tr></thead>
+                    <tbody>
+                        <tr><td>Força</td><td style="text-align: right;">171</td><td style="text-align: right;">21.1%</td></tr>
+                        <tr><td>Ciclismo</td><td style="text-align: right;">150</td><td style="text-align: right;">18.5%</td></tr>
+                        <tr><td>Caminhada</td><td style="text-align: right;">148</td><td style="text-align: right;">18.3%</td></tr>
+                        <tr><td>Other</td><td style="text-align: right;">84</td><td style="text-align: right;">10.4%</td></tr>
+                        <tr><td>Treino Funcional</td><td style="text-align: right;">56</td><td style="text-align: right;">6.9%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- EVOLUÇÃO SEMANAL -->
+            <div id="weekly" class="tab-content">
+                <div class="chart-box">
+                    <div class="chart-title">Evolução de Pontos - Top 5</div>
+                    <div class="chart-container-large">
+                        <canvas id="weeklyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>📈 Destaques:</strong> Daniel Silva lidera desde o início. Victor Falcão dispara na semana 5 (151.6 pts). Sthefany com melhor semana na 4ª (178.3 pts)!
+                </div>
+
+                <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Ranking por Semana - Top 5</h3>
+                <div class="week-tabs">
+                    <button class="week-tab active" onclick="switchWeek(event, 'w1')">Sem 1</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'w2')">Sem 2</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'w3')">Sem 3</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'w4')">Sem 4</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'w5')">Sem 5</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'w6')">Sem 6</button>
+                </div>
+
+                <div id="w1" class="week-content active">
+                    <table style="font-size: 0.85rem;">
+                        <tr><th style="width: 30px;">Rank</th><th>Participante</th><th style="text-align: right; width: 70px;">Acumulado</th></tr>
+                        <tr><td>1</td><td>Daniel Silva</td><td style="text-align: right;"><strong>130.9</strong></td></tr>
+                        <tr><td>2</td><td>Thiago Boufelli</td><td style="text-align: right;">96.6</td></tr>
+                        <tr><td>3</td><td>Tomas</td><td style="text-align: right;">93.6</td></tr>
+                        <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">86.9</td></tr>
+                        <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">53.8</td></tr>
+                    </table>
+                </div>
+
+                <div id="w2" class="week-content">
+                    <table style="font-size: 0.85rem;">
+                        <tr><th style="width: 30px;">Rank</th><th>Participante</th><th style="text-align: right; width: 70px;">Acumulado</th></tr>
+                        <tr><td>1</td><td>Daniel Silva</td><td style="text-align: right;"><strong>264.4</strong></td></tr>
+                        <tr><td>2</td><td>Gabi Gomes</td><td style="text-align: right;">207.9</td></tr>
+                        <tr><td>3</td><td>Tomas</td><td style="text-align: right;">199.0</td></tr>
+                        <tr><td>4</td><td>Thiago Boufelli</td><td style="text-align: right;">191.5</td></tr>
+                        <tr><td>5</td><td>Victor Falcão</td><td style="text-align: right;">155.6</td></tr>
+                    </table>
+                </div>
+
+                <div id="w3" class="week-content">
+                    <table style="font-size: 0.85rem;">
+                        <tr><th style="width: 30px;">Rank</th><th>Participante</th><th style="text-align: right; width: 70px;">Acumulado</th></tr>
+                        <tr><td>1</td><td>Daniel Silva</td><td style="text-align: right;"><strong>418.0</strong></td></tr>
+                        <tr><td>2</td><td>Gabi Gomes</td><td style="text-align: right;">311.0</td></tr>
+                        <tr><td>3</td><td>Tomas</td><td style="text-align: right;">289.3</td></tr>
+                        <tr><td>4</td><td>Thiago Boufelli</td><td style="text-align: right;">285.6</td></tr>
+                        <tr><td>5</td><td>Victor Falcão</td><td style="text-align: right;">254.1</td></tr>
+                    </table>
+                </div>
+
+                <div id="w4" class="week-content">
+                    <table style="font-size: 0.85rem;">
+                        <tr><th style="width: 30px;">Rank</th><th>Participante</th><th style="text-align: right; width: 70px;">Acumulado</th></tr>
+                        <tr><td>1</td><td>Daniel Silva</td><td style="text-align: right;"><strong>544.4</strong></td></tr>
+                        <tr><td>2</td><td>Thiago Boufelli</td><td style="text-align: right;">413.0</td></tr>
+                        <tr><td>3</td><td>Gabi Gomes</td><td style="text-align: right;">411.1</td></tr>
+                        <tr><td>4</td><td>Tomas</td><td style="text-align: right;">373.7</td></tr>
+                        <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">314.0</td></tr>
+                    </table>
+                </div>
+
+                <div id="w5" class="week-content">
+                    <table style="font-size: 0.85rem;">
+                        <tr><th style="width: 30px;">Rank</th><th>Participante</th><th style="text-align: right; width: 70px;">Acumulado</th></tr>
+                        <tr><td>1</td><td>Daniel Silva</td><td style="text-align: right;"><strong>627.4</strong></td></tr>
+                        <tr><td>2</td><td>Thiago Boufelli</td><td style="text-align: right;">520.6</td></tr>
+                        <tr><td>3</td><td>Victor Falcão</td><td style="text-align: right;">514.7</td></tr>
+                        <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">477.6</td></tr>
+                        <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">414.4</td></tr>
+                    </table>
+                </div>
+
+                <div id="w6" class="week-content">
+                    <table style="font-size: 0.85rem;">
+                        <tr><th style="width: 30px;">Rank</th><th>Participante</th><th style="text-align: right; width: 70px;">Acumulado</th></tr>
+                        <tr><td>1</td><td>Daniel Silva</td><td style="text-align: right;"><strong>756.3</strong></td></tr>
+                        <tr><td>2</td><td>Victor Falcão</td><td style="text-align: right;">641.6</td></tr>
+                        <tr><td>3</td><td>Thiago Boufelli</td><td style="text-align: right;">615.0</td></tr>
+                        <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">575.7</td></tr>
+                        <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">543.6</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- RANKING SEMANAL DETALHADO -->
+            <div id="weekly-detail" class="tab-content">
+                <h2 style="margin-bottom: 1rem;">Ranking Semanal Detalhado - Top 5</h2>
+                
+                <div class="week-tabs">
+                    <button class="week-tab active" onclick="switchWeek(event, 'wd1')">Sem 1</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'wd2')">Sem 2</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'wd3')">Sem 3</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'wd4')">Sem 4</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'wd5')">Sem 5</button>
+                    <button class="week-tab" onclick="switchWeek(event, 'wd6')">Sem 6</button>
+                </div>
+
+                <div id="wd1" class="week-content active">
+                    <h3 style="margin-bottom: 0.5rem;">Semana 1: 23/02 - 02/03</h3>
+                    <table>
+                        <thead><tr><th style="width: 50px;">Rank</th><th>Participante</th><th style="text-align: right;">Pts (Sem)</th><th style="text-align: right;">Ativ (Sem)</th><th style="text-align: right;">Pts (Acum)</th><th style="text-align: right;">Ativ (Acum)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>Daniel Silva</td><td style="text-align: right;">130.9</td><td style="text-align: right;">21</td><td style="text-align: right;"><strong>130.9</strong></td><td style="text-align: right;">21</td></tr>
+                            <tr><td>2</td><td>Thiago Boufelli</td><td style="text-align: right;">96.6</td><td style="text-align: right;">14</td><td style="text-align: right;">96.6</td><td style="text-align: right;">14</td></tr>
+                            <tr><td>3</td><td>Tomas</td><td style="text-align: right;">93.6</td><td style="text-align: right;">10</td><td style="text-align: right;">93.6</td><td style="text-align: right;">10</td></tr>
+                            <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">86.9</td><td style="text-align: right;">8</td><td style="text-align: right;">86.9</td><td style="text-align: right;">8</td></tr>
+                            <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">53.8</td><td style="text-align: right;">6</td><td style="text-align: right;">53.8</td><td style="text-align: right;">6</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="wd2" class="week-content">
+                    <h3 style="margin-bottom: 0.5rem;">Semana 2: 02/03 - 09/03</h3>
+                    <table>
+                        <thead><tr><th style="width: 50px;">Rank</th><th>Participante</th><th style="text-align: right;">Pts (Sem)</th><th style="text-align: right;">Ativ (Sem)</th><th style="text-align: right;">Pts (Acum)</th><th style="text-align: right;">Ativ (Acum)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>Daniel Silva</td><td style="text-align: right;">133.5</td><td style="text-align: right;">19</td><td style="text-align: right;"><strong>264.4</strong></td><td style="text-align: right;">40</td></tr>
+                            <tr><td>2</td><td>Gabi Gomes</td><td style="text-align: right;">121.0</td><td style="text-align: right;">11</td><td style="text-align: right;">207.9</td><td style="text-align: right;">19</td></tr>
+                            <tr><td>3</td><td>Tomas</td><td style="text-align: right;">105.4</td><td style="text-align: right;">10</td><td style="text-align: right;">199.0</td><td style="text-align: right;">20</td></tr>
+                            <tr><td>4</td><td>Thiago Boufelli</td><td style="text-align: right;">95.0</td><td style="text-align: right;">13</td><td style="text-align: right;">191.5</td><td style="text-align: right;">27</td></tr>
+                            <tr><td>5</td><td>Victor Falcão</td><td style="text-align: right;">105.9</td><td style="text-align: right;">14</td><td style="text-align: right;">155.6</td><td style="text-align: right;">23</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="wd3" class="week-content">
+                    <h3 style="margin-bottom: 0.5rem;">Semana 3: 09/03 - 16/03</h3>
+                    <table>
+                        <thead><tr><th style="width: 50px;">Rank</th><th>Participante</th><th style="text-align: right;">Pts (Sem)</th><th style="text-align: right;">Ativ (Sem)</th><th style="text-align: right;">Pts (Acum)</th><th style="text-align: right;">Ativ (Acum)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>Daniel Silva</td><td style="text-align: right;">153.6</td><td style="text-align: right;">19</td><td style="text-align: right;"><strong>418.0</strong></td><td style="text-align: right;">59</td></tr>
+                            <tr><td>2</td><td>Gabi Gomes</td><td style="text-align: right;">103.1</td><td style="text-align: right;">9</td><td style="text-align: right;">311.0</td><td style="text-align: right;">28</td></tr>
+                            <tr><td>3</td><td>Tomas</td><td style="text-align: right;">90.4</td><td style="text-align: right;">9</td><td style="text-align: right;">289.3</td><td style="text-align: right;">29</td></tr>
+                            <tr><td>4</td><td>Thiago Boufelli</td><td style="text-align: right;">94.0</td><td style="text-align: right;">10</td><td style="text-align: right;">285.6</td><td style="text-align: right;">37</td></tr>
+                            <tr><td>5</td><td>Victor Falcão</td><td style="text-align: right;">98.5</td><td style="text-align: right;">12</td><td style="text-align: right;">254.1</td><td style="text-align: right;">35</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="wd4" class="week-content">
+                    <h3 style="margin-bottom: 0.5rem;">Semana 4: 16/03 - 23/03</h3>
+                    <table>
+                        <thead><tr><th style="width: 50px;">Rank</th><th>Participante</th><th style="text-align: right;">Pts (Sem)</th><th style="text-align: right;">Ativ (Sem)</th><th style="text-align: right;">Pts (Acum)</th><th style="text-align: right;">Ativ (Acum)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>Daniel Silva</td><td style="text-align: right;">126.5</td><td style="text-align: right;">12</td><td style="text-align: right;"><strong>544.4</strong></td><td style="text-align: right;">71</td></tr>
+                            <tr><td>2</td><td>Thiago Boufelli</td><td style="text-align: right;">127.5</td><td style="text-align: right;">13</td><td style="text-align: right;">413.0</td><td style="text-align: right;">50</td></tr>
+                            <tr><td>3</td><td>Gabi Gomes</td><td style="text-align: right;">100.1</td><td style="text-align: right;">9</td><td style="text-align: right;">411.1</td><td style="text-align: right;">37</td></tr>
+                            <tr><td>4</td><td>Tomas</td><td style="text-align: right;">84.4</td><td style="text-align: right;">6</td><td style="text-align: right;">373.7</td><td style="text-align: right;">35</td></tr>
+                            <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">178.3</td><td style="text-align: right;">13</td><td style="text-align: right;">314.0</td><td style="text-align: right;">26</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="wd5" class="week-content">
+                    <h3 style="margin-bottom: 0.5rem;">Semana 5: 23/03 - 30/03</h3>
+                    <table>
+                        <thead><tr><th style="width: 50px;">Rank</th><th>Participante</th><th style="text-align: right;">Pts (Sem)</th><th style="text-align: right;">Ativ (Sem)</th><th style="text-align: right;">Pts (Acum)</th><th style="text-align: right;">Ativ (Acum)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>Daniel Silva</td><td style="text-align: right;">83.0</td><td style="text-align: right;">8</td><td style="text-align: right;"><strong>627.4</strong></td><td style="text-align: right;">79</td></tr>
+                            <tr><td>2</td><td>Thiago Boufelli</td><td style="text-align: right;">107.6</td><td style="text-align: right;">15</td><td style="text-align: right;">520.6</td><td style="text-align: right;">65</td></tr>
+                            <tr><td>3</td><td>Victor Falcão</td><td style="text-align: right;">151.6</td><td style="text-align: right;">18</td><td style="text-align: right;">514.7</td><td style="text-align: right;">65</td></tr>
+                            <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">66.4</td><td style="text-align: right;">6</td><td style="text-align: right;">477.6</td><td style="text-align: right;">43</td></tr>
+                            <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">100.4</td><td style="text-align: right;">7</td><td style="text-align: right;">414.4</td><td style="text-align: right;">33</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="wd6" class="week-content">
+                    <h3 style="margin-bottom: 0.5rem;">Semana 6: 30/03 - 06/04</h3>
+                    <table>
+                        <thead><tr><th style="width: 50px;">Rank</th><th>Participante</th><th style="text-align: right;">Pts (Sem)</th><th style="text-align: right;">Ativ (Sem)</th><th style="text-align: right;">Pts (Acum)</th><th style="text-align: right;">Ativ (Acum)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>Daniel Silva</td><td style="text-align: right;">128.9</td><td style="text-align: right;">13</td><td style="text-align: right;"><strong>756.3</strong></td><td style="text-align: right;">92</td></tr>
+                            <tr><td>2</td><td>Victor Falcão</td><td style="text-align: right;">126.9</td><td style="text-align: right;">14</td><td style="text-align: right;">641.6</td><td style="text-align: right;">79</td></tr>
+                            <tr><td>3</td><td>Thiago Boufelli</td><td style="text-align: right;">94.4</td><td style="text-align: right;">12</td><td style="text-align: right;">615.0</td><td style="text-align: right;">77</td></tr>
+                            <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">98.1</td><td style="text-align: right;">10</td><td style="text-align: right;">575.7</td><td style="text-align: right;">53</td></tr>
+                            <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">129.2</td><td style="text-align: right;">9</td><td style="text-align: right;">543.6</td><td style="text-align: right;">42</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- RANKING COMPLETO -->
+            <div id="ranking" class="tab-content">
+                <h2 style="margin-bottom: 1rem;">Classificação Final</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;">Rank</th>
+                            <th>Participante</th>
+                            <th style="text-align: right; width: 80px;">Pontos</th>
+                            <th style="text-align: right; width: 70px;">Ativ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>🥇</strong></td><td>Daniel Silva</td><td style="text-align: right;">775.6</td><td style="text-align: right;">94</td></tr>
+                        <tr><td><strong>🥈</strong></td><td>Victor Falcão</td><td style="text-align: right;">673.0</td><td style="text-align: right;">82</td></tr>
+                        <tr><td><strong>🥉</strong></td><td>Thiago Boufelli</td><td style="text-align: right;">652.0</td><td style="text-align: right;">80</td></tr>
+                        <tr><td>4</td><td>Gabi Gomes</td><td style="text-align: right;">585.1</td><td style="text-align: right;">54</td></tr>
+                        <tr><td>5</td><td>Sthefany Simioni</td><td style="text-align: right;">577.5</td><td style="text-align: right;">44</td></tr>
+                        <tr><td>6</td><td>Tomas</td><td style="text-align: right;">518.5</td><td style="text-align: right;">47</td></tr>
+                        <tr><td>7</td><td>Olivia Paiva</td><td style="text-align: right;">484.9</td><td style="text-align: right;">47</td></tr>
+                        <tr><td>8</td><td>Carolina Villa</td><td style="text-align: right;">458.3</td><td style="text-align: right;">99</td></tr>
+                        <tr><td>9</td><td>André Bifulco</td><td style="text-align: right;">376.3</td><td style="text-align: right;">52</td></tr>
+                        <tr><td>10</td><td>Gabs (Miranha)</td><td style="text-align: right;">359.7</td><td style="text-align: right;">53</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🚴 Tembici Rats Challenge | Dashboard gerado em 7 de abril de 2025</p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(e, id) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            e.target.classList.add('active');
+        }
+        function switchWeek(e, id) {
+            document.querySelectorAll('.week-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.week-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            e.target.classList.add('active');
+        }
+
+        const isDark = false;
+
+        if (document.getElementById('overviewChart')) {
+            new Chart(document.getElementById('overviewChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Daniel Silva', 'Victor Falcão', 'Thiago Boufelli', 'Gabi Gomes', 'Sthefany'],
+                    datasets: [{ label: 'Pontos', data: [775.6, 673.0, 652.0, 585.1, 577.5], backgroundColor: '#378ADD' }]
+                },
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#666' }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { color: '#666' } } } }
+            });
+        }
+
+        if (document.getElementById('activitiesChart')) {
+            new Chart(document.getElementById('activitiesChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Força', 'Ciclismo', 'Caminhada', 'Other', 'Treino Func', 'Corrida', 'Cross Train', 'Spinning', 'Pilates', 'Esteira'],
+                    datasets: [{ label: 'Check-ins', data: [171, 150, 148, 84, 56, 35, 21, 21, 13, 11], backgroundColor: '#D85A30' }]
+                },
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#666' }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { color: '#666' } } } }
+            });
+        }
+
+        if (document.getElementById('weeklyChart')) {
+            new Chart(document.getElementById('weeklyChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6'],
+                    datasets: [
+                        { label: 'Daniel Silva', data: [130.9, 264.4, 418.0, 544.4, 627.4, 756.3], borderColor: '#378ADD', backgroundColor: 'rgba(55, 138, 221, 0.08)', borderWidth: 2, fill: true, tension: 0.4, pointRadius: 4 },
+                        { label: 'Victor Falcão', data: [0, 155.6, 254.1, 363.1, 514.7, 641.6], borderColor: '#D85A30', backgroundColor: 'rgba(216, 90, 48, 0.08)', borderWidth: 2, fill: true, tension: 0.4, pointRadius: 4 },
+                        { label: 'Thiago Boufelli', data: [96.6, 191.5, 285.6, 413.0, 520.6, 615.0], borderColor: '#0F6E56', backgroundColor: 'rgba(15, 110, 86, 0.08)', borderWidth: 2, fill: true, tension: 0.4, pointRadius: 4 },
+                        { label: 'Gabi Gomes', data: [86.9, 207.9, 311.0, 411.1, 477.6, 575.7], borderColor: '#534AB7', backgroundColor: 'rgba(83, 74, 183, 0.08)', borderWidth: 2, fill: true, tension: 0.4, pointRadius: 4 },
+                        { label: 'Sthefany Simioni', data: [53.8, 109.2, 135.7, 314.0, 414.4, 543.6], borderColor: '#ED93B1', backgroundColor: 'rgba(237, 147, 177, 0.08)', borderWidth: 2, fill: true, tension: 0.4, pointRadius: 4 }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { display: true, position: 'bottom' } }, scales: { y: { ticks: { stepSize: 50, color: '#666' }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { ticks: { color: '#666' }, grid: { display: false } } } }
+            });
+        }
+    </script>
+</body>
+</html>
