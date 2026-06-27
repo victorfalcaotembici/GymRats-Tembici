@@ -230,9 +230,8 @@
         </header>
         
         <div class="tabs">
-            <button class="tab-btn active" onclick="switchTab(event, 'overview')">📊 Overview</button>
+            <button class="tab-btn active" onclick="switchTab(event, 'podium')">🏆 Pódio</button>
             <button class="tab-btn" onclick="switchTab(event, 'classificacao')">🏅 Categorias</button>
-            <button class="tab-btn" onclick="switchTab(event, 'podium')">🏆 Pódio</button>
             <button class="tab-btn" onclick="switchTab(event, 'monthly')">📅 Mensal</button>
             <button class="tab-btn" onclick="switchTab(event, 'weekly')">📈 Semanal</button>
             <button class="tab-btn" onclick="switchTab(event, 'evolution')">📉 Evolução</button>
@@ -242,355 +241,9 @@
         </div>
         
         <div class="content">
-            <!-- ABA 1: OVERVIEW -->
-            <div id="overview" class="tab-content active">
-                <h2>📊 Resumo Geral</h2>
-                <div class="metrics">
-                    <div class="metric">
-                        <div class="value">2064</div>
-                        <div class="label">Check-ins Total</div>
-                    </div>
-                    <div class="metric">
-                        <div class="value">21,228</div>
-                        <div class="label">Pontos do Grupo</div>
-                    </div>
-                    <div class="metric">
-                        <div class="value">1,942.8h</div>
-                        <div class="label">Horas de Atividade</div>
-                    </div>
-                    <div class="metric">
-                        <div class="value">21/21</div>
-                        <div class="label">Participantes Ativos</div>
-                    </div>
-                </div>
-                
-                <h3>🏆 Top 3 Geral</h3>
-                <div class="podium">
-                    
-        <div class="podium-item">
-            <div class="podium-medal">🥇</div>
-            <div class="podium-name">Daniel Silva</div>
-            <div class="podium-points">2362.9 pts</div>
-            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">
-                242 atividades<br>209.7h
-            </div>
-        </div>
-        
-
-        <div class="podium-item">
-            <div class="podium-medal">🥈</div>
-            <div class="podium-name">Victor Falcão</div>
-            <div class="podium-points">2272.4 pts</div>
-            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">
-                230 atividades<br>225.9h
-            </div>
-        </div>
-        
-
-        <div class="podium-item">
-            <div class="podium-medal">🥉</div>
-            <div class="podium-name">Sthefany Simioni</div>
-            <div class="podium-points">2002.2 pts</div>
-            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">
-                144 atividades<br>170.6h
-            </div>
-        </div>
-        
-                </div>
-                
-                <h3>📊 Ranking Completo (Top 10)</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="rank">#</th>
-                            <th>Nome</th>
-                            <th style="width: 100px;">Pontos</th>
-                            <th style="width: 100px;">Atividades</th>
-                            <th style="width: 100px;">Horas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-        <tr>
-            <td class="rank">#1</td>
-            <td>Daniel Silva</td>
-            <td style="color: #667eea; font-weight: bold;">2362.9</td>
-            <td>242</td>
-            <td>209.7h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#2</td>
-            <td>Victor Falcão</td>
-            <td style="color: #667eea; font-weight: bold;">2272.4</td>
-            <td>230</td>
-            <td>225.9h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#3</td>
-            <td>Sthefany Simioni</td>
-            <td style="color: #667eea; font-weight: bold;">2002.2</td>
-            <td>144</td>
-            <td>170.6h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#4</td>
-            <td>Olivia Paiva</td>
-            <td style="color: #667eea; font-weight: bold;">1772.4</td>
-            <td>168</td>
-            <td>133.3h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#5</td>
-            <td>Thiago Boufelli</td>
-            <td style="color: #667eea; font-weight: bold;">1429.3</td>
-            <td>166</td>
-            <td>133.3h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#6</td>
-            <td>Tomas</td>
-            <td style="color: #667eea; font-weight: bold;">1413.6</td>
-            <td>113</td>
-            <td>113.7h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#7</td>
-            <td>Gabi Gomes</td>
-            <td style="color: #667eea; font-weight: bold;">1412.4</td>
-            <td>131</td>
-            <td>129.9h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#8</td>
-            <td>Aldo</td>
-            <td style="color: #667eea; font-weight: bold;">1273.9</td>
-            <td>54</td>
-            <td>79.1h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#9</td>
-            <td>Carolina Villa</td>
-            <td style="color: #667eea; font-weight: bold;">1075.5</td>
-            <td>155</td>
-            <td>167.2h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#10</td>
-            <td>Newton Sozza</td>
-            <td style="color: #667eea; font-weight: bold;">1044.7</td>
-            <td>62</td>
-            <td>91.3h</td>
-        </tr>
-        
-                    </tbody>
-                </table>
-            </div>
-            
-            <!-- ABA 2: PÓDIO -->
-            <div id="podium" class="tab-content">
-                <h2>🏆 Pódio Final</h2>
-                <div class="podium">
-                    
-        <div class="podium-item">
-            <div class="podium-medal">🥇</div>
-            <div class="podium-name">Daniel Silva</div>
-            <div class="podium-points">2362.9 pts</div>
-            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">
-                242 atividades<br>209.7h
-            </div>
-        </div>
-        
-
-        <div class="podium-item">
-            <div class="podium-medal">🥈</div>
-            <div class="podium-name">Victor Falcão</div>
-            <div class="podium-points">2272.4 pts</div>
-            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">
-                230 atividades<br>225.9h
-            </div>
-        </div>
-        
-
-        <div class="podium-item">
-            <div class="podium-medal">🥉</div>
-            <div class="podium-name">Sthefany Simioni</div>
-            <div class="podium-points">2002.2 pts</div>
-            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">
-                144 atividades<br>170.6h
-            </div>
-        </div>
-        
-                </div>
-                
-                <h3>📊 Top 15 Ranking</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="rank">#</th>
-                            <th>Nome</th>
-                            <th style="width: 100px;">Pontos</th>
-                            <th style="width: 100px;">Atividades</th>
-                            <th style="width: 100px;">Horas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-        <tr>
-            <td class="rank">#1</td>
-            <td>Daniel Silva</td>
-            <td style="color: #667eea; font-weight: bold;">2362.9</td>
-            <td>242</td>
-            <td>209.7h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#2</td>
-            <td>Victor Falcão</td>
-            <td style="color: #667eea; font-weight: bold;">2272.4</td>
-            <td>230</td>
-            <td>225.9h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#3</td>
-            <td>Sthefany Simioni</td>
-            <td style="color: #667eea; font-weight: bold;">2002.2</td>
-            <td>144</td>
-            <td>170.6h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#4</td>
-            <td>Olivia Paiva</td>
-            <td style="color: #667eea; font-weight: bold;">1772.4</td>
-            <td>168</td>
-            <td>133.3h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#5</td>
-            <td>Thiago Boufelli</td>
-            <td style="color: #667eea; font-weight: bold;">1429.3</td>
-            <td>166</td>
-            <td>133.3h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#6</td>
-            <td>Tomas</td>
-            <td style="color: #667eea; font-weight: bold;">1413.6</td>
-            <td>113</td>
-            <td>113.7h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#7</td>
-            <td>Gabi Gomes</td>
-            <td style="color: #667eea; font-weight: bold;">1412.4</td>
-            <td>131</td>
-            <td>129.9h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#8</td>
-            <td>Aldo</td>
-            <td style="color: #667eea; font-weight: bold;">1273.9</td>
-            <td>54</td>
-            <td>79.1h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#9</td>
-            <td>Carolina Villa</td>
-            <td style="color: #667eea; font-weight: bold;">1075.5</td>
-            <td>155</td>
-            <td>167.2h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#10</td>
-            <td>Newton Sozza</td>
-            <td style="color: #667eea; font-weight: bold;">1044.7</td>
-            <td>62</td>
-            <td>91.3h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#11</td>
-            <td>Gabi</td>
-            <td style="color: #667eea; font-weight: bold;">893.6</td>
-            <td>89</td>
-            <td>80.7h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#12</td>
-            <td>Caroline Nascimento</td>
-            <td style="color: #667eea; font-weight: bold;">812.6</td>
-            <td>98</td>
-            <td>78.5h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#13</td>
-            <td>André Bifulco</td>
-            <td style="color: #667eea; font-weight: bold;">715.2</td>
-            <td>84</td>
-            <td>67.1h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#14</td>
-            <td>Gabs (Miranha)</td>
-            <td style="color: #667eea; font-weight: bold;">566.5</td>
-            <td>78</td>
-            <td>63.7h</td>
-        </tr>
-        
-
-        <tr>
-            <td class="rank">#15</td>
-            <td>Paula</td>
-            <td style="color: #667eea; font-weight: bold;">550.8</td>
-            <td>51</td>
-            <td>47.9h</td>
-        </tr>
-        
-                    </tbody>
-                </table>
-                
-
+            <!-- ABA 1: PÓDIO -->
+            <div id="podium" class="tab-content active">
+                <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');#podium *{box-sizing:border-box;margin:0;padding:0}#podium{font-family:'Inter',system-ui,sans-serif;background:#f0f2f8;padding:16px 12px 28px;color:#1a1a2e}.fh{text-align:center;margin-bottom:16px}.fh h2{font-size:1.6em;font-weight:900;background:linear-gradient(90deg,#4338ca,#7c3aed,#c026d3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:2px}.fh p{color:#888;font-size:.82em}.tc{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;align-items:start}.fcol{display:flex;flex-direction:column;gap:8px}.fc{background:#fff;border-radius:13px;padding:11px 13px;border:1px solid #e2e8f0;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}.fc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--c1),var(--c2))}.fc:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.09)}.rank-1{border-color:#fde68a;background:linear-gradient(135deg,#fffbeb 0%,#fff 60%)}.rank-2{border-color:#e2e8f0;background:linear-gradient(135deg,#f8fafc 0%,#fff 60%)}.rank-3{border-color:#fed7aa;background:linear-gradient(135deg,#fff7ed 0%,#fff 60%)}.ft{display:flex;align-items:center;gap:8px;margin-bottom:7px}.frb{font-size:1.1em;font-weight:900;min-width:26px;text-align:center;color:#94a3b8}.rank-1 .frb{color:#d97706}.rank-2 .frb{color:#64748b}.rank-3 .frb{color:#b45309}.faw{position:relative;flex-shrink:0}.fav{width:38px;height:38px;border-radius:50%;border:2px solid var(--c1);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:.95em}.feb{position:absolute;bottom:-2px;right:-4px;font-size:12px;line-height:1}.fnb{flex:1;min-width:0}.fpn{font-size:.82em;font-weight:800;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fnn{font-size:.68em;font-weight:600;margin-top:1px}.ftp{font-size:.6em;font-weight:700;padding:1px 6px;border-radius:20px;border:1px solid;display:inline-block;margin-top:2px;background:transparent}.fpb{text-align:right;flex-shrink:0}.fpv{font-size:1.1em;font-weight:900;line-height:1}.fpl{font-size:.55em;color:#94a3b8;text-transform:uppercase;letter-spacing:.8px}.fpd{font-size:.58em;font-weight:700;margin-top:1px}.fpt{height:4px;background:#f1f5f9;border-radius:3px;overflow:hidden;margin-bottom:7px}.fpf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--c1),var(--c2))}.fsr{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}.fsp{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:2px 7px;font-size:.6em;color:#475569;display:flex;align-items:center;gap:2px}.fsp span{color:#1e293b;font-weight:700}.fcb{display:flex;align-items:center;justify-content:space-between;gap:6px}.fvt{font-size:.6em;color:#64748b;font-style:italic;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.gg{font-size:.58em;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0}@media(max-width:900px){.tc{grid-template-columns:1fr 1fr}}@media(max-width:600px){.tc{grid-template-columns:1fr}}</style><div class="fh"><h2>🏋️ Tembici Rats — Top 15</h2><p>Ranking atualizado • Semana 18</p></div><div class="tc"><div class="fcol"><div class="fc rank-1" style="--c1:#b8860b;--c2:#f59e0b;"><div class="ft"><div class="frb">🥇</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#b8860b,#f59e0b)">D</div><div class="feb">🦁</div></div><div class="fnb"><div class="fpn">Daniel Silva</div><div class="fnn" style="color:#b8860b">O Insaciável</div><div class="ftp" style="color:#b8860b;border-color:#b8860b40">🚴 Ciclista nato</div></div><div class="fpb"><div class="fpv" style="color:#b8860b">2,408.0</div><div class="fpl">pontos</div><div class="fpd" style="color:#b8860b">+91.2 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:100.0%"></div></div><div class="fsr"><div class="fsp">🏃 <span>247</span> treinos</div><div class="fsp">⏱️ <span>214h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"242 treinos. Come, dorme e pedala. Não necessariamente nesta ordem."</div><div class="gg" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">🏆 Líder absoluto!</div></div></div><div class="fc rank-2" style="--c1:#4338ca;--c2:#667eea;"><div class="ft"><div class="frb">🥈</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#4338ca,#667eea)">V</div><div class="feb">🚴</div></div><div class="fnb"><div class="fpn">Victor Falcão</div><div class="fnn" style="color:#4338ca">O Maratonista</div><div class="ftp" style="color:#4338ca;border-color:#4338ca40">⏱️ Mais horas</div></div><div class="fpb"><div class="fpv" style="color:#4338ca">2,325.3</div><div class="fpl">pontos</div><div class="fpd" style="color:#4338ca">+91.4 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:96.6%"></div></div><div class="fsr"><div class="fsp">🏃 <span>235</span> treinos</div><div class="fsp">⏱️ <span>230h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"226h de atividade. Trabalha ou só pedala? Sim."</div><div class="gg" style="background:#fffbeb;color:#d97706;border:1px solid #fde68a">⚡ 83 pts do #1</div></div></div><div class="fc rank-3" style="--c1:#c2410c;--c2:#fb923c;"><div class="ft"><div class="frb">🥉</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#c2410c,#fb923c)">S</div><div class="feb">🌙</div></div><div class="fnb"><div class="fpn">Sthefany Simioni</div><div class="fnn" style="color:#c2410c">A Madrugadeira</div><div class="ftp" style="color:#c2410c;border-color:#c2410c40">🌙 5h da manhã clube</div></div><div class="fpb"><div class="fpv" style="color:#c2410c">2,063.2</div><div class="fpl">pontos</div><div class="fpd" style="color:#c2410c">+117.6 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:85.7%"></div></div><div class="fsr"><div class="fsp">🏃 <span>147</span> treinos</div><div class="fsp">⏱️ <span>176h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"Treina quando o resto do mundo ainda está sonhando."</div><div class="gg" style="background:#eff6ff;color:#4338ca;border:1px solid #bfdbfe">📏 262 pts do #2</div></div></div><div class="fc rank-4" style="--c1:#047857;--c2:#34d399;"><div class="ft"><div class="frb">#4</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#047857,#34d399)">O</div><div class="feb">🕵️</div></div><div class="fnb"><div class="fpn">Olivia Paiva</div><div class="fnn" style="color:#047857">A Missão Secreta</div><div class="ftp" style="color:#047857;border-color:#04785740">🌅 Madrugadeira</div></div><div class="fpb"><div class="fpv" style="color:#047857">1,825.2</div><div class="fpl">pontos</div><div class="fpd" style="color:#047857">+96.2 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:75.8%"></div></div><div class="fsr"><div class="fsp">🏃 <span>171</span> treinos</div><div class="fsp">⏱️ <span>137h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"Categoria favorita: mistério. Resultados: impressionantes."</div><div class="gg" style="background:#eff6ff;color:#4338ca;border:1px solid #bfdbfe">📏 238 pts do #3</div></div></div><div class="fc rank-5" style="--c1:#6d28d9;--c2:#a78bfa;"><div class="ft"><div class="frb">#5</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">T</div><div class="feb">🏄</div></div><div class="fnb"><div class="fpn">Thiago Boufelli</div><div class="fnn" style="color:#6d28d9">O Surfista</div><div class="ftp" style="color:#6d28d9;border-color:#6d28d940">🏄 Único surfista</div></div><div class="fpb"><div class="fpv" style="color:#6d28d9">1,485.3</div><div class="fpl">pontos</div><div class="fpd" style="color:#6d28d9">+98.4 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:61.7%"></div></div><div class="fsr"><div class="fsp">🏃 <span>173</span> treinos</div><div class="fsp">⏱️ <span>138h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"Pedala, surfa, malha. Energia renovável humana."</div><div class="gg" style="background:#eff6ff;color:#4338ca;border:1px solid #bfdbfe">📏 340 pts do #4</div></div></div></div><div class="fcol"><div class="fc rank-6" style="--c1:#b91c1c;--c2:#f87171;"><div class="ft"><div class="frb">#6</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#b91c1c,#f87171)">G</div><div class="feb">💪</div></div><div class="fnb"><div class="fpn">Gabi Gomes</div><div class="fnn" style="color:#b91c1c">A Funcional</div><div class="ftp" style="color:#b91c1c;border-color:#b91c1c40">💪 Rainha do funcional</div></div><div class="fpb"><div class="fpv" style="color:#b91c1c">1,482.4</div><div class="fpl">pontos</div><div class="fpd" style="color:#b91c1c">+81.6 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:61.6%"></div></div><div class="fsr"><div class="fsp">🏃 <span>137</span> treinos</div><div class="fsp">⏱️ <span>136h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"41 sessões de funcional. Não é treino, é religião."</div><div class="gg" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca">🔥 Só 3 pts do #5!</div></div></div><div class="fc rank-7" style="--c1:#92400e;--c2:#fbbf24;"><div class="ft"><div class="frb">#7</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#92400e,#fbbf24)">T</div><div class="feb">🦉</div></div><div class="fnb"><div class="fpn">Tomas</div><div class="fnn" style="color:#92400e">O Noturno</div><div class="ftp" style="color:#92400e;border-color:#92400e40">🦉 Coruja do grupo</div></div><div class="fpb"><div class="fpv" style="color:#92400e">1,460.8</div><div class="fpl">pontos</div><div class="fpd" style="color:#92400e">+81.1 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:60.7%"></div></div><div class="fsr"><div class="fsp">🏃 <span>116</span> treinos</div><div class="fsp">⏱️ <span>117h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"Já jogou tênis às 23h. Não é lenda, é fato."</div><div class="gg" style="background:#fffbeb;color:#d97706;border:1px solid #fde68a">⚡ 22 pts do #6</div></div></div><div class="fc rank-8" style="--c1:#0369a1;--c2:#38bdf8;"><div class="ft"><div class="frb">#8</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#0369a1,#38bdf8)">A</div><div class="feb">🏋️</div></div><div class="fnb"><div class="fpn">Aldo</div><div class="fnn" style="color:#0369a1">O Monstro</div><div class="ftp" style="color:#0369a1;border-color:#0369a140">⚡ Eficiência absurda</div></div><div class="fpb"><div class="fpv" style="color:#0369a1">1,273.9</div><div class="fpl">pontos</div><div class="fpd" style="color:#0369a1">+0.0 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:52.9%"></div></div><div class="fsr"><div class="fsp">🏃 <span>54</span> treinos</div><div class="fsp">⏱️ <span>79h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"54 treinos, 1273 pts. Cada treino vale por 3."</div><div class="gg" style="background:#eff6ff;color:#4338ca;border:1px solid #bfdbfe">📏 187 pts do #7</div></div></div><div class="fc rank-9" style="--c1:#15803d;--c2:#4ade80;"><div class="ft"><div class="frb">#9</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#15803d,#4ade80)">C</div><div class="feb">👟</div></div><div class="fnb"><div class="fpn">Carolina Villa</div><div class="fnn" style="color:#15803d">A Incansável</div><div class="ftp" style="color:#15803d;border-color:#15803d40">🦶 Rainha dos passos</div></div><div class="fpb"><div class="fpv" style="color:#15803d">1,075.5</div><div class="fpl">pontos</div><div class="fpd" style="color:#15803d">+0.0 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:44.7%"></div></div><div class="fsr"><div class="fsp">🏃 <span>155</span> treinos</div><div class="fsp">⏱️ <span>167h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"90 caminhadas. 167h. Nunca para, nunca desiste."</div><div class="gg" style="background:#eff6ff;color:#4338ca;border:1px solid #bfdbfe">📏 198 pts do #8</div></div></div><div class="fc rank-10" style="--c1:#86198f;--c2:#e879f9;"><div class="ft"><div class="frb">#10</div><div class="faw"><div class="fav" style="background:linear-gradient(135deg,#86198f,#e879f9)">N</div><div class="feb">🧠</div></div><div class="fnb"><div class="fpn">Newton Sozza</div><div class="fnn" style="color:#86198f">O Estrategista</div><div class="ftp" style="color:#86198f;border-color:#86198f40">📈 Chegando forte</div></div><div class="fpb"><div class="fpv" style="color:#86198f">1,044.7</div><div class="fpl">pontos</div><div class="fpd" style="color:#86198f">+0.0 esta sem.</div></div></div><div class="fpt"><div class="fpf" style="width:43.4%"></div></div><div class="fsr"><div class="fsp">🏃 <span>62</span> treinos</div><div class="fsp">⏱️ <span>91h</span> ativas</div><div class="fsp">🎯 <span>Outro</span></div></div><div class="fcb"><div class="fvt">"62 treinos certeiros. Qualidade acima de quantidade."</div><div class="gg" style="background:#fffbeb;color:#d97706;border:1px solid #fde68a">⚡ 31 pts do #9</div></div></div></div><div class="fcol"></div></div>
             </div>
             
             <!-- ABA 3: MENSAL -->
@@ -1034,59 +687,68 @@
                 <tr>
                     <td class="rank">#1</td>
                     <td>Sthefany Simioni</td>
-                    <td style="color: #667eea; font-weight: bold;">469.0</td>
-                    <td>23</td>
-                    <td style="font-weight: bold;">2002.2</td>
+                    <td style="color: #667eea; font-weight: bold;">530.0</td>
+                    <td>26</td>
+                    <td style="font-weight: bold;">2063.2</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#2</td>
-                    <td>Daniel Silva</td>
-                    <td style="color: #667eea; font-weight: bold;">445.7</td>
-                    <td>43</td>
-                    <td style="font-weight: bold;">2362.9</td>
+                    <td>Victor Falcão</td>
+                    <td style="color: #667eea; font-weight: bold;">495.3</td>
+                    <td>46</td>
+                    <td style="font-weight: bold;">2325.3</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#3</td>
-                    <td>Victor Falcão</td>
-                    <td style="color: #667eea; font-weight: bold;">442.4</td>
-                    <td>41</td>
-                    <td style="font-weight: bold;">2272.4</td>
+                    <td>Daniel Silva</td>
+                    <td style="color: #667eea; font-weight: bold;">490.8</td>
+                    <td>48</td>
+                    <td style="font-weight: bold;">2408.0</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#4</td>
                     <td>Olivia Paiva</td>
-                    <td style="color: #667eea; font-weight: bold;">417.5</td>
-                    <td>48</td>
-                    <td style="font-weight: bold;">1772.4</td>
+                    <td style="color: #667eea; font-weight: bold;">470.3</td>
+                    <td>51</td>
+                    <td style="font-weight: bold;">1825.2</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#5</td>
                     <td>Gabi Gomes</td>
-                    <td style="color: #667eea; font-weight: bold;">295.7</td>
-                    <td>28</td>
-                    <td style="font-weight: bold;">1412.4</td>
+                    <td style="color: #667eea; font-weight: bold;">365.7</td>
+                    <td>34</td>
+                    <td style="font-weight: bold;">1482.4</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#6</td>
                     <td>Tomas</td>
-                    <td style="color: #667eea; font-weight: bold;">281.2</td>
-                    <td>20</td>
-                    <td style="font-weight: bold;">1413.6</td>
+                    <td style="color: #667eea; font-weight: bold;">328.4</td>
+                    <td>23</td>
+                    <td style="font-weight: bold;">1460.8</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#7</td>
+                    <td>Tiago Soares</td>
+                    <td style="color: #667eea; font-weight: bold;">281.6</td>
+                    <td>19</td>
+                    <td style="font-weight: bold;">505.4</td>
+                </tr>
+            
+
+                <tr>
+                    <td class="rank">#8</td>
                     <td>Newton Sozza</td>
                     <td style="color: #667eea; font-weight: bold;">256.7</td>
                     <td>21</td>
@@ -1095,29 +757,20 @@
             
 
                 <tr>
-                    <td class="rank">#8</td>
-                    <td>Tiago Soares</td>
-                    <td style="color: #667eea; font-weight: bold;">236.5</td>
-                    <td>16</td>
-                    <td style="font-weight: bold;">460.3</td>
-                </tr>
-            
-
-                <tr>
                     <td class="rank">#9</td>
-                    <td>Aldo</td>
-                    <td style="color: #667eea; font-weight: bold;">178.4</td>
-                    <td>11</td>
-                    <td style="font-weight: bold;">1273.9</td>
+                    <td>Thiago Boufelli</td>
+                    <td style="color: #667eea; font-weight: bold;">183.4</td>
+                    <td>17</td>
+                    <td style="font-weight: bold;">1485.3</td>
                 </tr>
             
 
                 <tr>
                     <td class="rank">#10</td>
-                    <td>Caroline Nascimento</td>
-                    <td style="color: #667eea; font-weight: bold;">141.4</td>
-                    <td>20</td>
-                    <td style="font-weight: bold;">812.6</td>
+                    <td>Aldo</td>
+                    <td style="color: #667eea; font-weight: bold;">178.4</td>
+                    <td>11</td>
+                    <td style="font-weight: bold;">1273.9</td>
                 </tr>
             
 </tbody></table>
@@ -2174,7 +1827,121 @@
             <div id="evolution" class="tab-content">
                 <h2>📉 Evolução de Ranking (Posição por Semana)</h2>
                 <p style="font-size: 0.9em; color: #666;">Gráfico mostrando a evolução do ranking dos Top 10 competidores ao longo das semanas</p>
-                <div style="margin-top:20px; position:relative; height:520px;"><canvas id="evolutionChart"></canvas></div><script>document.addEventListener("DOMContentLoaded", function() {  var ctx = document.getElementById("evolutionChart").getContext("2d");  new Chart(ctx, {    type: "line",    data: { labels: ["Sem 1", "Sem 2", "Sem 3", "Sem 4", "Sem 5", "Sem 6", "Sem 7", "Sem 8", "Sem 9", "Sem 10", "Sem 11", "Sem 12", "Sem 13", "Sem 14", "Sem 15", "Sem 16", "Sem 17", "Sem 18"], datasets: [{"label": "Daniel Silva", "data": [130.9, 264.4, 402.1, 525.6, 612.9, 742.2, 872.0, 1030.0, 1170.3, 1299.2, 1348.0, 1533.4, 1708.7, 1897.6, 2051.3, 2190.5, 2316.8, 2362.9], "borderColor": "#FF6384", "backgroundColor": "#FF6384", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Victor Falc\u00e3o", "data": [54.7, 149.7, 248.0, 356.6, 494.8, 627.5, 753.8, 878.4, 1036.7, 1173.5, 1326.8, 1531.2, 1654.5, 1824.4, 1940.6, 2087.9, 2233.9, 2272.4], "borderColor": "#36A2EB", "backgroundColor": "#36A2EB", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Sthefany Simioni", "data": [66.3, 147.1, 227.7, 314.0, 408.2, 528.9, 658.4, 801.3, 914.5, 1029.5, 1159.9, 1297.9, 1386.8, 1520.5, 1657.7, 1801.6, 1945.6, 2002.2], "borderColor": "#FFCE56", "backgroundColor": "#FFCE56", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Olivia Paiva", "data": [68.1, 124.8, 193.7, 247.0, 339.8, 451.0, 541.9, 639.8, 757.8, 910.1, 1062.4, 1147.8, 1237.7, 1342.4, 1470.5, 1603.6, 1729.0, 1772.4], "borderColor": "#4BC0C0", "backgroundColor": "#4BC0C0", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Thiago Boufelli", "data": [96.6, 188.2, 285.6, 397.3, 517.7, 607.7, 694.4, 786.2, 868.8, 956.6, 1041.0, 1107.3, 1221.3, 1297.2, 1350.8, 1386.9, 1386.9, 1429.3], "borderColor": "#9966FF", "backgroundColor": "#9966FF", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Tomas", "data": [73.9, 187.4, 276.9, 373.7, 435.5, 504.1, 568.3, 645.6, 727.7, 803.3, 861.0, 921.4, 1001.7, 1099.1, 1223.1, 1316.0, 1379.8, 1413.6], "borderColor": "#FF9F40", "backgroundColor": "#FF9F40", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Gabi Gomes", "data": [86.9, 196.4, 301.6, 411.1, 466.0, 575.7, 671.6, 743.3, 810.2, 882.4, 939.6, 1031.2, 1088.3, 1107.0, 1197.4, 1306.8, 1400.9, 1412.4], "borderColor": "#E7E9ED", "backgroundColor": "#E7E9ED", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Aldo", "data": [67.0, 67.0, 67.0, 67.0, 67.0, 460.3, 550.7, 599.4, 665.5, 750.9, 832.0, 913.1, 978.0, 1095.5, 1192.8, 1273.9, 1273.9, 1273.9], "borderColor": "#71B37C", "backgroundColor": "#71B37C", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Carolina Villa", "data": [23.6, 90.3, 167.1, 238.8, 316.1, 395.9, 457.6, 514.3, 631.6, 721.3, 782.6, 841.2, 890.0, 964.2, 1026.4, 1075.5, 1075.5, 1075.5], "borderColor": "#F7464A", "backgroundColor": "#F7464A", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}, {"label": "Newton Sozza", "data": [40.4, 40.4, 40.4, 40.4, 60.6, 339.4, 419.7, 515.0, 584.6, 610.4, 610.4, 623.7, 719.4, 774.9, 868.2, 967.6, 1044.7, 1044.7], "borderColor": "#46BFBD", "backgroundColor": "#46BFBD", "tension": 0.3, "fill": false, "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2, "spanGaps": true}] },    options: {      responsive: true,      maintainAspectRatio: false,      plugins: {        legend: { position: "right", labels: { usePointStyle: true, padding: 14, font: { size: 12 } } }      },      scales: {        y: {          beginAtZero: true,          ticks: { callback: function(v){ return v + " pts"; } },          title: { display: true, text: "Pontos Acumulados" }        },        x: { title: { display: true, text: "Semana" } }      },      interaction: { mode: "index", intersect: false }    }  });});</script>
+                <style>#race-wrap{background:#0f0f1a;border-radius:12px;padding:20px 24px;margin-top:8px;color:white;font-family:Segoe UI,system-ui,sans-serif}#race-svg-container{width:100%;overflow:hidden}#race-controls{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}#race-week-label{font-size:1.8em;font-weight:900;color:#a78bfa;min-width:120px;text-align:right;margin-left:auto}.race-btn{padding:8px 20px;border:none;border-radius:25px;font-size:.85em;font-weight:700;cursor:pointer;transition:all .2s}#btn-play{background:linear-gradient(90deg,#667eea,#764ba2);color:white;box-shadow:0 4px 14px rgba(102,126,234,.4)}#btn-play:hover{transform:scale(1.05)}#btn-restart{background:rgba(255,255,255,.1);color:#ccc;border:1px solid rgba(255,255,255,.2)}#btn-restart:hover{background:rgba(255,255,255,.2)}.speed-btn{background:rgba(255,255,255,.08);color:#aaa;border:1px solid rgba(255,255,255,.15);padding:6px 12px;border-radius:20px;font-size:.78em;font-weight:600;cursor:pointer}.speed-btn.active{background:#764ba2;color:white;border-color:#764ba2}#race-progress{flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}#race-progress-fill{height:100%;background:linear-gradient(90deg,#667eea,#a78bfa);border-radius:2px;transition:width .1s}</style><div id="race-wrap"><div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px"><h3 style="font-size:1.1em;font-weight:800;background:linear-gradient(90deg,#667eea,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">&#x1F4C9; Evolução &mdash; Bar Chart Race</h3><span style="font-size:.78em;color:#666">Top 10 &middot; pontos acumulados por semana</span></div><div id="race-svg-container"></div><div id="race-controls"><button class="race-btn" id="btn-play">&#x25B6; Play</button><button class="race-btn" id="btn-restart">&#x21BA; Reiniciar</button><div style="display:flex;gap:6px;align-items:center"><span style="font-size:.75em;color:#888">Velocidade:</span><button class="speed-btn" data-speed="2000">0.5&#xD7;</button><button class="speed-btn active" data-speed="1000">1&#xD7;</button><button class="speed-btn" data-speed="500">2&#xD7;</button><button class="speed-btn" data-speed="250">4&#xD7;</button></div><div id="race-progress"><div id="race-progress-fill" style="width:0%"></div></div><div id="race-week-label">Semana 1</div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script><script>
+(function(){
+var FRAMES=[[{"name": "Carolina Villa", "value": 23.6, "color": "#46BFBD"}, {"name": "Newton Sozza", "value": 40.4, "color": "#c026d3"}, {"name": "Victor Falcão", "value": 54.7, "color": "#36A2EB"}, {"name": "Sthefany Simioni", "value": 66.3, "color": "#FFCE56"}, {"name": "Aldo", "value": 67.0, "color": "#F7464A"}, {"name": "Olivia Paiva", "value": 68.1, "color": "#4BC0C0"}, {"name": "Tomas", "value": 73.9, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 86.9, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 96.6, "color": "#9966FF"}, {"name": "Daniel Silva", "value": 130.9, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 40.4, "color": "#c026d3"}, {"name": "Aldo", "value": 67.0, "color": "#F7464A"}, {"name": "Carolina Villa", "value": 90.3, "color": "#46BFBD"}, {"name": "Olivia Paiva", "value": 124.8, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 147.1, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 149.7, "color": "#36A2EB"}, {"name": "Tomas", "value": 187.4, "color": "#71B37C"}, {"name": "Thiago Boufelli", "value": 188.2, "color": "#9966FF"}, {"name": "Gabi Gomes", "value": 196.4, "color": "#FF9F40"}, {"name": "Daniel Silva", "value": 264.4, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 40.4, "color": "#c026d3"}, {"name": "Aldo", "value": 67.0, "color": "#F7464A"}, {"name": "Carolina Villa", "value": 167.1, "color": "#46BFBD"}, {"name": "Olivia Paiva", "value": 193.7, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 227.7, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 248.0, "color": "#36A2EB"}, {"name": "Tomas", "value": 276.9, "color": "#71B37C"}, {"name": "Thiago Boufelli", "value": 285.6, "color": "#9966FF"}, {"name": "Gabi Gomes", "value": 301.6, "color": "#FF9F40"}, {"name": "Daniel Silva", "value": 402.1, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 40.4, "color": "#c026d3"}, {"name": "Aldo", "value": 67.0, "color": "#F7464A"}, {"name": "Carolina Villa", "value": 238.8, "color": "#46BFBD"}, {"name": "Olivia Paiva", "value": 247.0, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 314.0, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 356.6, "color": "#36A2EB"}, {"name": "Tomas", "value": 373.7, "color": "#71B37C"}, {"name": "Thiago Boufelli", "value": 397.3, "color": "#9966FF"}, {"name": "Gabi Gomes", "value": 411.1, "color": "#FF9F40"}, {"name": "Daniel Silva", "value": 525.6, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 60.6, "color": "#c026d3"}, {"name": "Aldo", "value": 67.0, "color": "#F7464A"}, {"name": "Carolina Villa", "value": 316.1, "color": "#46BFBD"}, {"name": "Olivia Paiva", "value": 339.8, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 408.2, "color": "#FFCE56"}, {"name": "Tomas", "value": 435.5, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 466.0, "color": "#FF9F40"}, {"name": "Victor Falcão", "value": 494.8, "color": "#36A2EB"}, {"name": "Thiago Boufelli", "value": 517.7, "color": "#9966FF"}, {"name": "Daniel Silva", "value": 612.9, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 339.4, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 395.9, "color": "#46BFBD"}, {"name": "Olivia Paiva", "value": 451.0, "color": "#4BC0C0"}, {"name": "Aldo", "value": 460.3, "color": "#F7464A"}, {"name": "Tomas", "value": 504.1, "color": "#71B37C"}, {"name": "Sthefany Simioni", "value": 528.9, "color": "#FFCE56"}, {"name": "Gabi Gomes", "value": 575.7, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 607.7, "color": "#9966FF"}, {"name": "Victor Falcão", "value": 627.5, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 742.2, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 419.7, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 457.6, "color": "#46BFBD"}, {"name": "Olivia Paiva", "value": 541.9, "color": "#4BC0C0"}, {"name": "Aldo", "value": 550.7, "color": "#F7464A"}, {"name": "Tomas", "value": 568.3, "color": "#71B37C"}, {"name": "Sthefany Simioni", "value": 658.4, "color": "#FFCE56"}, {"name": "Gabi Gomes", "value": 671.6, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 694.4, "color": "#9966FF"}, {"name": "Victor Falcão", "value": 753.8, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 872.0, "color": "#FF6384"}], [{"name": "Carolina Villa", "value": 514.3, "color": "#46BFBD"}, {"name": "Newton Sozza", "value": 515.0, "color": "#c026d3"}, {"name": "Aldo", "value": 599.4, "color": "#F7464A"}, {"name": "Olivia Paiva", "value": 639.8, "color": "#4BC0C0"}, {"name": "Tomas", "value": 645.6, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 743.3, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 786.2, "color": "#9966FF"}, {"name": "Sthefany Simioni", "value": 801.3, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 878.4, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1030.0, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 584.6, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 631.6, "color": "#46BFBD"}, {"name": "Aldo", "value": 665.5, "color": "#F7464A"}, {"name": "Tomas", "value": 727.7, "color": "#71B37C"}, {"name": "Olivia Paiva", "value": 757.8, "color": "#4BC0C0"}, {"name": "Gabi Gomes", "value": 810.2, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 868.8, "color": "#9966FF"}, {"name": "Sthefany Simioni", "value": 914.5, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1036.7, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1170.3, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 610.4, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 721.3, "color": "#46BFBD"}, {"name": "Aldo", "value": 750.9, "color": "#F7464A"}, {"name": "Tomas", "value": 803.3, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 882.4, "color": "#FF9F40"}, {"name": "Olivia Paiva", "value": 910.1, "color": "#4BC0C0"}, {"name": "Thiago Boufelli", "value": 956.6, "color": "#9966FF"}, {"name": "Sthefany Simioni", "value": 1029.5, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1173.5, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1299.2, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 610.4, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 782.6, "color": "#46BFBD"}, {"name": "Aldo", "value": 832.0, "color": "#F7464A"}, {"name": "Tomas", "value": 861.0, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 939.6, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 1041.0, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1062.4, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1159.9, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1326.8, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1348.0, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 623.7, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 841.2, "color": "#46BFBD"}, {"name": "Aldo", "value": 913.1, "color": "#F7464A"}, {"name": "Tomas", "value": 921.4, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 1031.2, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 1107.3, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1147.8, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1297.9, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1531.2, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1533.4, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 719.4, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 890.0, "color": "#46BFBD"}, {"name": "Aldo", "value": 978.0, "color": "#F7464A"}, {"name": "Tomas", "value": 1001.7, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 1088.3, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 1221.3, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1237.7, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1386.8, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1654.5, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1708.7, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 774.9, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 964.2, "color": "#46BFBD"}, {"name": "Aldo", "value": 1095.5, "color": "#F7464A"}, {"name": "Tomas", "value": 1099.1, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 1107.0, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 1297.2, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1342.4, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1520.5, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1824.4, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 1897.6, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 868.2, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 1026.4, "color": "#46BFBD"}, {"name": "Aldo", "value": 1192.8, "color": "#F7464A"}, {"name": "Gabi Gomes", "value": 1197.4, "color": "#FF9F40"}, {"name": "Tomas", "value": 1223.1, "color": "#71B37C"}, {"name": "Thiago Boufelli", "value": 1350.8, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1470.5, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1657.7, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 1940.6, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 2051.3, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 967.6, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 1075.5, "color": "#46BFBD"}, {"name": "Aldo", "value": 1273.9, "color": "#F7464A"}, {"name": "Gabi Gomes", "value": 1306.8, "color": "#FF9F40"}, {"name": "Tomas", "value": 1316.0, "color": "#71B37C"}, {"name": "Thiago Boufelli", "value": 1386.9, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1603.6, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1801.6, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 2087.9, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 2190.5, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 1044.7, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 1075.5, "color": "#46BFBD"}, {"name": "Aldo", "value": 1273.9, "color": "#F7464A"}, {"name": "Tomas", "value": 1379.8, "color": "#71B37C"}, {"name": "Thiago Boufelli", "value": 1386.9, "color": "#9966FF"}, {"name": "Gabi Gomes", "value": 1400.9, "color": "#FF9F40"}, {"name": "Olivia Paiva", "value": 1729.0, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 1945.6, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 2233.9, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 2316.8, "color": "#FF6384"}], [{"name": "Newton Sozza", "value": 1044.7, "color": "#c026d3"}, {"name": "Carolina Villa", "value": 1075.5, "color": "#46BFBD"}, {"name": "Aldo", "value": 1273.9, "color": "#F7464A"}, {"name": "Tomas", "value": 1460.8, "color": "#71B37C"}, {"name": "Gabi Gomes", "value": 1482.4, "color": "#FF9F40"}, {"name": "Thiago Boufelli", "value": 1485.3, "color": "#9966FF"}, {"name": "Olivia Paiva", "value": 1825.2, "color": "#4BC0C0"}, {"name": "Sthefany Simioni", "value": 2063.2, "color": "#FFCE56"}, {"name": "Victor Falcão", "value": 2325.3, "color": "#36A2EB"}, {"name": "Daniel Silva", "value": 2408.0, "color": "#FF6384"}]];
+var WEEK_LABELS=["Semana 1", "Semana 2", "Semana 3", "Semana 4", "Semana 5", "Semana 6", "Semana 7", "Semana 8", "Semana 9", "Semana 10", "Semana 11", "Semana 12", "Semana 13", "Semana 14", "Semana 15", "Semana 16", "Semana 17", "Semana 18"];
+var BAR_H=36, BAR_GAP=7, MARGIN={top:8,right:160,bottom:32,left:8};
+var N=10;
+var totalH=N*(BAR_H+BAR_GAP)+MARGIN.top+MARGIN.bottom;
+var container=document.getElementById("race-svg-container");
+var W=container.clientWidth||800;
+var innerW=W-MARGIN.left-MARGIN.right;
+
+var svg=d3.select("#race-svg-container").append("svg")
+  .attr("width","100%").attr("height",totalH)
+  .attr("viewBox","0 0 "+W+" "+totalH);
+var g=svg.append("g").attr("transform","translate("+MARGIN.left+","+MARGIN.top+")");
+var xAxisG=g.append("g").attr("class","x-axis").attr("transform","translate(0,"+(N*(BAR_H+BAR_GAP))+")");
+var xScale=d3.scaleLinear().range([0,innerW]);
+
+var frameIdx=0, playing=false, timer=null, speed=1000;
+
+function maxVal(frame){return d3.max(frame,function(d){return d.value;})||1;}
+
+function draw(frame,instant){
+  var mx=maxVal(frame);
+  xScale.domain([0,mx*1.08]);
+  var dur=instant?0:speed*0.85;
+
+  var bars=g.selectAll(".race-bar").data(frame,function(d){return d.name;});
+  var entered=bars.enter().append("g").attr("class","race-bar");
+  entered.append("rect").attr("height",BAR_H).attr("rx",6);
+  entered.append("text").attr("class","bar-label");
+  entered.append("text").attr("class","val-label");
+  var all=entered.merge(bars);
+
+  all.transition().duration(dur).ease(d3.easeLinear)
+    .attr("transform",function(d,i){return "translate(0,"+(i*(BAR_H+BAR_GAP))+")";});
+
+  all.select("rect").transition().duration(dur).ease(d3.easeLinear)
+    .attr("width",function(d){return Math.max(xScale(d.value),4);})
+    .attr("fill",function(d){return d.color;});
+
+  all.select(".bar-label")
+    .attr("y",BAR_H/2+5).attr("font-size","12").attr("font-weight","700").attr("fill","white")
+    .transition().duration(dur).ease(d3.easeLinear)
+    .attr("x",function(d){return Math.max(xScale(d.value),4)+6;})
+    .attr("fill",function(d){return d.color;})
+    .text(function(d){return d.name;});
+
+  all.select(".val-label")
+    .attr("y",BAR_H/2+5).attr("font-size","11").attr("fill","rgba(255,255,255,.65)")
+    .transition().duration(dur).ease(d3.easeLinear)
+    .attr("x",function(d){return Math.max(xScale(d.value)-6,2);})
+    .attr("text-anchor","end")
+    .text(function(d){
+      if(d.value<=0)return "";
+      return d.value.toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1});
+    });
+
+  xAxisG.transition().duration(dur).call(
+    d3.axisBottom(xScale).ticks(5).tickFormat(function(v){return v+" pts";})
+  ).selectAll("text").attr("fill","#888").attr("font-size","11");
+  xAxisG.selectAll("line,path").attr("stroke","rgba(255,255,255,.1)");
+
+  all.each(function(d,i){
+    var el=d3.select(this);
+    el.select(".medal").remove();
+    var rank=frame.length-1-i;
+    if(rank<3){
+      el.append("text").attr("class","medal")
+        .attr("x",innerW+22).attr("y",BAR_H/2+7)
+        .attr("font-size","20").attr("text-anchor","middle")
+        .text(["🥇","🥈","🥉"][rank]);
+    }
+  });
+}
+
+function updateUI(){
+  document.getElementById("race-week-label").textContent=WEEK_LABELS[frameIdx]||"";
+  var pct=FRAMES.length>1?(frameIdx/(FRAMES.length-1)*100).toFixed(1):100;
+  document.getElementById("race-progress-fill").style.width=pct+"%";
+}
+
+function step(){
+  draw(FRAMES[frameIdx],false);
+  updateUI();
+  frameIdx++;
+  if(frameIdx>=FRAMES.length){stop();return;}
+  timer=setTimeout(step,speed);
+}
+function play(){
+  if(frameIdx>=FRAMES.length)frameIdx=0;
+  playing=true;
+  document.getElementById("btn-play").innerHTML="&#x23F8; Pause";
+  step();
+}
+function stop(){
+  playing=false;
+  clearTimeout(timer);
+  document.getElementById("btn-play").innerHTML="&#x25B6; Play";
+}
+function restart(){stop();frameIdx=0;draw(FRAMES[0],true);updateUI();}
+
+document.getElementById("btn-play").addEventListener("click",function(){playing?stop():play();});
+document.getElementById("btn-restart").addEventListener("click",restart);
+document.querySelectorAll(".speed-btn").forEach(function(b){
+  b.addEventListener("click",function(){
+    speed=+this.dataset.speed;
+    document.querySelectorAll(".speed-btn").forEach(function(x){x.classList.remove("active");});
+    this.classList.add("active");
+  });
+});
+
+draw(FRAMES[0],true);updateUI();
+})();
+</script>
             </div>
             
             <!-- ABA 6: ATIVIDADES -->
@@ -2193,14 +1960,14 @@
         <tr>
             <td class="rank">#1</td>
             <td>Treinamento de Força</td>
-            <td>511</td>
+            <td>523</td>
         </tr>
         
 
         <tr>
             <td class="rank">#2</td>
             <td>Ciclismo</td>
-            <td>500</td>
+            <td>515</td>
         </tr>
         
 
@@ -2214,7 +1981,7 @@
         <tr>
             <td class="rank">#4</td>
             <td>Treinamento Funcional</td>
-            <td>103</td>
+            <td>107</td>
         </tr>
         
 
@@ -2228,7 +1995,7 @@
         <tr>
             <td class="rank">#6</td>
             <td>CrossFit</td>
-            <td>56</td>
+            <td>57</td>
         </tr>
         
 
@@ -2242,34 +2009,34 @@
         <tr>
             <td class="rank">#8</td>
             <td>Spinning</td>
-            <td>47</td>
+            <td>49</td>
         </tr>
         
 
         <tr>
             <td class="rank">#9</td>
+            <td>HIIT</td>
+            <td>45</td>
+        </tr>
+        
+
+        <tr>
+            <td class="rank">#10</td>
             <td>Pilates</td>
             <td>44</td>
         </tr>
         
 
         <tr>
-            <td class="rank">#10</td>
-            <td>HIIT</td>
-            <td>42</td>
-        </tr>
-        
-
-        <tr>
             <td class="rank">#11</td>
-            <td>Esteira</td>
-            <td>31</td>
+            <td>Tênis</td>
+            <td>32</td>
         </tr>
         
 
         <tr>
             <td class="rank">#12</td>
-            <td>Tênis</td>
+            <td>Esteira</td>
             <td>31</td>
         </tr>
         
@@ -2277,7 +2044,7 @@
         <tr>
             <td class="rank">#13</td>
             <td>Dança</td>
-            <td>22</td>
+            <td>24</td>
         </tr>
         
 
@@ -2294,11 +2061,11 @@
             <!-- ABA 7: CURIOSIDADES -->
             <div id="curiosities" class="tab-content">
                 <h2>🎯 Curiosidades do Desafio</h2>
-                <div class="fun-fact">🏆 <strong>Daniel Silva</strong> é o campeão com 2362.9 pontos!</div>
-<div class="fun-fact">⏱️ <strong>Victor Falcão</strong> foi o mais dedicado com 225.9 horas de atividade!</div>
-<div class="fun-fact">📊 <strong>Daniel Silva</strong> fez 242 check-ins!</div>
-<div class="fun-fact">💪 A atividade favorita é <strong>Força</strong> com 542 ocorrências!</div>
-<div class="fun-fact">📈 A média de horas por participante é 92.5h!</div>
+                <div class="fun-fact">🏆 <strong>Daniel Silva</strong> é o campeão com 2408.0 pontos!</div>
+<div class="fun-fact">⏱️ <strong>Victor Falcão</strong> foi o mais dedicado com 230.2 horas de atividade!</div>
+<div class="fun-fact">📊 <strong>Daniel Silva</strong> fez 247 check-ins!</div>
+<div class="fun-fact">💪 A atividade favorita é <strong>Força</strong> com 554 ocorrências!</div>
+<div class="fun-fact">📈 A média de horas por participante é 94.4h!</div>
 <div class="fun-fact">🎯 O grupo realizou <strong>6 tipos diferentes</strong> de atividades!</div>
 <div class="fun-fact">🔥 <strong>Victor Falcão</strong> foi consistente, treinando em 18 semanas!</div>
 <div class="fun-fact">⚡ <strong>Aldo</strong> tem a melhor eficiência (23.59 pts/atividade)!</div>
@@ -2398,6 +2165,7 @@
 <p style="margin: 5px 0; color: #333;">• Cycling < 2km (0.00km) - Ciclismo (2026-06-17)</p>
 <p style="margin: 5px 0; color: #333;">• Cycling < 2km (0.00km) - Ciclismo (2026-06-18)</p>
 <p style="margin: 5px 0; color: #333;">• Cycling < 2km (0.00km) - Ciclismo (2026-06-23)</p>
+<p style="margin: 5px 0; color: #333;">• Cycling < 2km (0.00km) - Ciclismo (2026-06-26)</p>
 </div>
 
         <div style="background: #fff3cd; border-left: 4px solid #ff9800; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
@@ -2438,12 +2206,12 @@
 
             <!-- ABA 9: CATEGORIAS -->
             <div id="classificacao" class="tab-content">
-                <div id="tab-classificacao"><style>.classificacao-container{padding:20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:10px;color:white;}.cat-selectors{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}.genero-selector,.periodo-selector{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}.periodo-selector{border-top:1px solid rgba(255,255,255,0.2);padding-top:12px;}.genero-btn,.periodo-btn{padding:9px 20px;border:2px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:white;border-radius:25px;cursor:pointer;font-size:14px;font-weight:600;transition:all 0.25s ease;}.genero-btn:hover,.periodo-btn:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.6);transform:translateY(-2px);}.genero-btn.active,.periodo-btn.active{background:rgba(255,255,255,0.3);border-color:white;box-shadow:0 0 20px rgba(255,255,255,0.35);transform:scale(1.05);}.cat-periodo-label{text-align:center;font-size:13px;opacity:0.75;margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;}.categorias-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:20px;}.categoria-card{background:rgba(255,255,255,0.98);border-radius:18px;padding:0;color:#333;box-shadow:0 10px 40px rgba(0,0,0,0.15);transition:all 0.3s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;}.categoria-card:hover{transform:translateY(-8px);box-shadow:0 15px 50px rgba(0,0,0,0.2);}.categoria-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--color-primary),var(--color-secondary));}.categoria-header{padding:28px 25px;text-align:center;background:linear-gradient(135deg,rgba(var(--color-rgb),0.1),rgba(var(--color-rgb),0.05));border-bottom:2px solid rgba(var(--color-rgb),0.1);}.categoria-icon{font-size:60px;line-height:1;margin-bottom:10px;display:inline-block;}.categoria-title{margin:0;font-size:17px;font-weight:700;color:var(--color-primary,#667eea);}.categoria-desc{font-size:12px;color:#999;margin:5px 0 0 0;font-weight:500;}.categoria-podio{padding:18px 22px;flex:1;display:flex;flex-direction:column;gap:10px;}.podio-place{display:flex;align-items:center;gap:12px;padding:10px 12px;background:linear-gradient(90deg,rgba(var(--color-rgb),0.08),transparent);border-left:4px solid var(--color-primary);border-radius:8px;}.podio-medal{font-size:30px;line-height:1;min-width:42px;text-align:center;}.podio-info{flex:1;min-width:0;}.podio-name{font-weight:700;color:var(--color-primary,#333);font-size:14px;word-break:break-word;margin:0;}.podio-points{font-size:12px;color:#666;margin-top:3px;font-weight:500;}.podio-empty{padding:20px;text-align:center;color:#ccc;font-size:13px;}.categoria-card[data-categoria="general"]{--color-primary:#FFD700;--color-secondary:#FFA500;--color-rgb:255,215,0;}.categoria-card[data-categoria="kom"]{--color-primary:#FF6B6B;--color-secondary:#EE5A6F;--color-rgb:255,107,107;}.categoria-card[data-categoria="velocista"]{--color-primary:#4ECDC4;--color-secondary:#44A5A2;--color-rgb:78,205,196;}.categoria-card[data-categoria="combativo"]{--color-primary:#F38181;--color-secondary:#D46A6A;--color-rgb:243,129,129;}.categoria-card[data-categoria="novato"]{--color-primary:#95E1D3;--color-secondary:#78D5C5;--color-rgb:149,225,211;}.categoria-card[data-categoria="ascensao"]{--color-primary:#A8E6CF;--color-secondary:#8DDCB8;--color-rgb:168,230,207;}.categoria-card[data-categoria="especialista"]{--color-primary:#FFD3B6;--color-secondary:#FFBC94;--color-rgb:255,211,182;}.categoria-card[data-categoria="versatil"]{--color-primary:#9A8FDB;--color-secondary:#8374C8;--color-rgb:154,143,219;}@media(max-width:768px){.categorias-grid{grid-template-columns:1fr;}.categoria-icon{font-size:48px;}.genero-btn,.periodo-btn{flex:1;min-width:80px;text-align:center;padding:8px 12px;font-size:13px;}}</style><div class="classificacao-container"><div class="cat-selectors"><div class="cat-periodo-label">Gênero</div><div class="genero-selector"><button class="genero-btn active" data-genero="geral">🌍 Geral</button><button class="genero-btn" data-genero="masculino">👨 Homens</button><button class="genero-btn" data-genero="feminino">👩 Mulheres</button></div><div class="cat-periodo-label">Período</div><div class="periodo-selector"><button class="periodo-btn active" data-periodo="ytd">📊 YTD</button><button class="periodo-btn" data-periodo="2026-02">Fevereiro</button><button class="periodo-btn" data-periodo="2026-03">Março</button><button class="periodo-btn" data-periodo="2026-04">Abril</button><button class="periodo-btn" data-periodo="2026-05">Maio</button><button class="periodo-btn" data-periodo="2026-06">Junho</button></div></div><div id="categorias-grid" class="categorias-grid"></div></div><script>const _catConfig = [  {key:"general",     nome:"Pódio Geral",            icon:"🏆", desc:"Maior pontuação acumulada",    unidade:" pts"},  {key:"kom",         nome:"Rei/Rainha da Montanha", icon:"👑", desc:"Especialista em força e HIIT", unidade:" pts"},  {key:"velocista",   nome:"Velocista",              icon:"💨", desc:"Especialista em cardio",       unidade:" pts"},  {key:"combativo",   nome:"Espírito Combativo",     icon:"🔥", desc:"Maior nº de dias treinados",   unidade:" dias"},  {key:"novato",      nome:"Melhor Novato",          icon:"👶", desc:"Melhor entre os novatos",      unidade:" pts"},  {key:"ascensao",    nome:"Ascensão Meteórica",     icon:"📈", desc:"Maior crescimento mês a mês (YTD)", unidade:" pts"},  {key:"especialista",nome:"Especialista",           icon:"🎯", desc:"Líder em sua especialidade",   unidade:" pts"},  {key:"versatil",    nome:"Treinador Versátil",     icon:"🔄", desc:"Mais tipos de treinos",        unidade:" tipos"},];const _medals = ["🥇","🥈","🥉"];const _catData = {"ytd": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 2362.9}, {"nome": "Victor Falcão", "pontos": 2272.4}, {"nome": "Sthefany Simioni", "pontos": 2002.2}], "masculino": [{"nome": "Daniel Silva", "pontos": 2362.9}, {"nome": "Victor Falcão", "pontos": 2272.4}, {"nome": "Thiago Boufelli", "pontos": 1429.3}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 2002.2}, {"nome": "Olivia Paiva", "pontos": 1772.4}, {"nome": "Gabi Gomes", "pontos": 1412.4}]}, "kom": {"geral": [{"nome": "Sthefany Simioni", "pontos": 1552.2}, {"nome": "Daniel Silva", "pontos": 1283.8}, {"nome": "Aldo", "pontos": 1242.7}], "masculino": [{"nome": "Daniel Silva", "pontos": 1283.8}, {"nome": "Aldo", "pontos": 1242.7}, {"nome": "Thiago Boufelli", "pontos": 995.0}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 1552.2}, {"nome": "Carolina Villa", "pontos": 667.5}, {"nome": "Gabi Gomes", "pontos": 569.7}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 2145.1}, {"nome": "Daniel Silva", "pontos": 1076.0}, {"nome": "Gabi Gomes", "pontos": 450.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 2145.1}, {"nome": "Daniel Silva", "pontos": 1076.0}, {"nome": "Thiago Boufelli", "pontos": 341.3}], "feminino": [{"nome": "Gabi Gomes", "pontos": 450.6}, {"nome": "Sthefany Simioni", "pontos": 450.1}, {"nome": "Carolina Villa", "pontos": 408.0}]}, "combativo": {"geral": [{"nome": "Victor Falcão", "pontos": 116}, {"nome": "Sthefany Simioni", "pontos": 116}, {"nome": "Olivia Paiva", "pontos": 113}], "masculino": [{"nome": "Victor Falcão", "pontos": 116}, {"nome": "Daniel Silva", "pontos": 112}, {"nome": "Thiago Boufelli", "pontos": 96}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 116}, {"nome": "Olivia Paiva", "pontos": 113}, {"nome": "Gabi Gomes", "pontos": 96}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 2362.9}, {"nome": "Aldo", "pontos": 1273.9}, {"nome": "Newton Sozza", "pontos": 1044.7}], "masculino": [{"nome": "Daniel Silva", "pontos": 2362.9}, {"nome": "Aldo", "pontos": 1273.9}, {"nome": "Newton Sozza", "pontos": 1044.7}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 812.6}, {"nome": "Sabrina", "pontos": 144.1}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 1934.4, "atividade": "Ciclismo"}, {"nome": "Sthefany Simioni", "pontos": 1552.2, "atividade": "Treinamento de Força"}, {"nome": "Aldo", "pontos": 1242.7, "atividade": "CrossFit"}], "masculino": [{"nome": "Victor Falcão", "pontos": 1934.4, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 1242.7, "atividade": "CrossFit"}, {"nome": "Daniel Silva", "pontos": 968.4, "atividade": "Ciclismo"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 1552.2, "atividade": "Treinamento de Força"}, {"nome": "Olivia Paiva", "pontos": 1196.2, "atividade": "Outro"}, {"nome": "Gabi", "pontos": 482.2, "atividade": "Treinamento de Força"}]}, "versatil": {"geral": [{"nome": "Caroline Nascimento", "pontos": 14}, {"nome": "Gabi Gomes", "pontos": 11}, {"nome": "Paula", "pontos": 11}], "masculino": [{"nome": "Tomas", "pontos": 10}, {"nome": "Daniel Silva", "pontos": 8}, {"nome": "Gustavo Baldon torquato", "pontos": 8}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 14}, {"nome": "Gabi Gomes", "pontos": 11}, {"nome": "Paula", "pontos": 11}]}}, "2026-02": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Thiago Boufelli", "pontos": 96.6}, {"nome": "Gabi Gomes", "pontos": 86.9}], "masculino": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Thiago Boufelli", "pontos": 96.6}, {"nome": "Tomas", "pontos": 73.9}], "feminino": [{"nome": "Gabi Gomes", "pontos": 86.9}, {"nome": "Olivia Paiva", "pontos": 68.1}, {"nome": "Sthefany Simioni", "pontos": 66.3}]}, "kom": {"geral": [{"nome": "Daniel Silva", "pontos": 77.3}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Sthefany Simioni", "pontos": 64.2}], "masculino": [{"nome": "Daniel Silva", "pontos": 77.3}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Thiago Boufelli", "pontos": 58.2}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 64.2}, {"nome": "Paula", "pontos": 46.8}, {"nome": "Olivia Paiva", "pontos": 38.1}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 54.7}, {"nome": "Sabrina", "pontos": 51.5}, {"nome": "Daniel Silva", "pontos": 50.5}], "masculino": [{"nome": "Victor Falcão", "pontos": 54.7}, {"nome": "Daniel Silva", "pontos": 50.5}, {"nome": "André Bifulco", "pontos": 45.3}], "feminino": [{"nome": "Sabrina", "pontos": 51.5}, {"nome": "Gabi Gomes", "pontos": 28.1}, {"nome": "Gabi", "pontos": 19.4}]}, "combativo": {"geral": [{"nome": "Thiago Boufelli", "pontos": 6}, {"nome": "Gabi Gomes", "pontos": 6}, {"nome": "Sthefany Simioni", "pontos": 6}], "masculino": [{"nome": "Thiago Boufelli", "pontos": 6}, {"nome": "Daniel Silva", "pontos": 6}, {"nome": "Tomas", "pontos": 5}], "feminino": [{"nome": "Gabi Gomes", "pontos": 6}, {"nome": "Sthefany Simioni", "pontos": 6}, {"nome": "Paula", "pontos": 5}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Sabrina", "pontos": 51.5}], "masculino": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Newton Sozza", "pontos": 40.4}], "feminino": [{"nome": "Sabrina", "pontos": 51.5}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Aldo", "pontos": 67.0, "atividade": "CrossFit"}, {"nome": "Sthefany Simioni", "pontos": 64.2, "atividade": "Treinamento de Força"}, {"nome": "Sabrina", "pontos": 51.5, "atividade": "Caminhada"}], "masculino": [{"nome": "Aldo", "pontos": 67.0, "atividade": "CrossFit"}, {"nome": "Tomas", "pontos": 43.9, "atividade": "Corrida"}, {"nome": "Newton Sozza", "pontos": 40.4, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 64.2, "atividade": "Treinamento de Força"}, {"nome": "Sabrina", "pontos": 51.5, "atividade": "Caminhada"}, {"nome": "Gabi Gomes", "pontos": 34.6, "atividade": "Treinamento Funcional"}]}, "versatil": {"geral": [{"nome": "Paula", "pontos": 6}, {"nome": "Daniel Silva", "pontos": 5}, {"nome": "Thiago Boufelli", "pontos": 4}], "masculino": [{"nome": "Daniel Silva", "pontos": 5}, {"nome": "Thiago Boufelli", "pontos": 4}, {"nome": "Tiago Tomita", "pontos": 3}], "feminino": [{"nome": "Paula", "pontos": 6}, {"nome": "Gabi Gomes", "pontos": 4}, {"nome": "Olivia Paiva", "pontos": 4}]}}, "2026-03": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Victor Falcão", "pontos": 497.9}, {"nome": "Thiago Boufelli", "pontos": 460.1}], "masculino": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Victor Falcão", "pontos": 497.9}, {"nome": "Thiago Boufelli", "pontos": 460.1}], "feminino": [{"nome": "Gabi Gomes", "pontos": 411.6}, {"nome": "Sthefany Simioni", "pontos": 395.3}, {"nome": "Carolina Villa", "pontos": 333.2}]}, "kom": {"geral": [{"nome": "Aldo", "pontos": 393.2}, {"nome": "Sthefany Simioni", "pontos": 365.2}, {"nome": "Thiago Boufelli", "pontos": 324.8}], "masculino": [{"nome": "Aldo", "pontos": 393.2}, {"nome": "Thiago Boufelli", "pontos": 324.8}, {"nome": "Daniel Silva", "pontos": 288.9}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 365.2}, {"nome": "Caroline Nascimento", "pontos": 237.6}, {"nome": "Carolina Villa", "pontos": 200.1}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 472.4}, {"nome": "Daniel Silva", "pontos": 244.4}, {"nome": "Carolina Villa", "pontos": 133.1}], "masculino": [{"nome": "Victor Falcão", "pontos": 472.4}, {"nome": "Daniel Silva", "pontos": 244.4}, {"nome": "Tomas", "pontos": 132.0}], "feminino": [{"nome": "Carolina Villa", "pontos": 133.1}, {"nome": "Gabi Gomes", "pontos": 121.9}, {"nome": "Gabi", "pontos": 35.9}]}, "combativo": {"geral": [{"nome": "Carolina Villa", "pontos": 29}, {"nome": "Thiago Boufelli", "pontos": 29}, {"nome": "Victor Falcão", "pontos": 29}], "masculino": [{"nome": "Thiago Boufelli", "pontos": 29}, {"nome": "Victor Falcão", "pontos": 29}, {"nome": "Daniel Silva", "pontos": 27}], "feminino": [{"nome": "Carolina Villa", "pontos": 29}, {"nome": "Sthefany Simioni", "pontos": 27}, {"nome": "Gabi Gomes", "pontos": 27}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Aldo", "pontos": 393.2}, {"nome": "Gabs (Miranha)", "pontos": 298.5}], "masculino": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Aldo", "pontos": 393.2}, {"nome": "Gabs (Miranha)", "pontos": 298.5}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 279.6}, {"nome": "Sabrina", "pontos": 35.5}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 415.8, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 393.2, "atividade": "CrossFit"}, {"nome": "Sthefany Simioni", "pontos": 365.2, "atividade": "Treinamento de Força"}], "masculino": [{"nome": "Victor Falcão", "pontos": 415.8, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 393.2, "atividade": "CrossFit"}, {"nome": "Newton Sozza", "pontos": 285.6, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 365.2, "atividade": "Treinamento de Força"}, {"nome": "Olivia Paiva", "pontos": 312.9, "atividade": "Outro"}, {"nome": "Caroline Nascimento", "pontos": 226.5, "atividade": "Treinamento de Força"}]}, "versatil": {"geral": [{"nome": "Tomas", "pontos": 8}, {"nome": "Gustavo Baldon torquato", "pontos": 8}, {"nome": "Gabi Gomes", "pontos": 7}], "masculino": [{"nome": "Tomas", "pontos": 8}, {"nome": "Gustavo Baldon torquato", "pontos": 8}, {"nome": "Victor Falcão", "pontos": 5}], "feminino": [{"nome": "Gabi Gomes", "pontos": 7}, {"nome": "Caroline Nascimento", "pontos": 6}, {"nome": "Carolina Villa", "pontos": 5}]}}, "2026-04": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Victor Falcão", "pontos": 567.5}, {"nome": "Sthefany Simioni", "pontos": 539.6}], "masculino": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Victor Falcão", "pontos": 567.5}, {"nome": "Thiago Boufelli", "pontos": 388.8}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 539.6}, {"nome": "Olivia Paiva", "pontos": 478.6}, {"nome": "Carolina Villa", "pontos": 351.3}]}, "kom": {"geral": [{"nome": "Sthefany Simioni", "pontos": 469.8}, {"nome": "Daniel Silva", "pontos": 333.7}, {"nome": "Thiago Boufelli", "pontos": 247.0}], "masculino": [{"nome": "Daniel Silva", "pontos": 333.7}, {"nome": "Thiago Boufelli", "pontos": 247.0}, {"nome": "Newton Sozza", "pontos": 234.0}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 469.8}, {"nome": "Carolina Villa", "pontos": 205.0}, {"nome": "Gabi", "pontos": 147.4}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 538.6}, {"nome": "Daniel Silva", "pontos": 267.2}, {"nome": "André Bifulco", "pontos": 176.4}], "masculino": [{"nome": "Victor Falcão", "pontos": 538.6}, {"nome": "Daniel Silva", "pontos": 267.2}, {"nome": "André Bifulco", "pontos": 176.4}], "feminino": [{"nome": "Carolina Villa", "pontos": 146.3}, {"nome": "Gabi Gomes", "pontos": 105.9}, {"nome": "Gabi", "pontos": 87.0}]}, "combativo": {"geral": [{"nome": "Olivia Paiva", "pontos": 30}, {"nome": "Victor Falcão", "pontos": 30}, {"nome": "Sthefany Simioni", "pontos": 30}], "masculino": [{"nome": "Victor Falcão", "pontos": 30}, {"nome": "Daniel Silva", "pontos": 30}, {"nome": "Thiago Boufelli", "pontos": 28}], "feminino": [{"nome": "Olivia Paiva", "pontos": 30}, {"nome": "Sthefany Simioni", "pontos": 30}, {"nome": "Carolina Villa", "pontos": 25}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Newton Sozza", "pontos": 284.4}, {"nome": "Caroline Nascimento", "pontos": 256.1}], "masculino": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Newton Sozza", "pontos": 284.4}, {"nome": "Aldo", "pontos": 250.1}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 256.1}, {"nome": "Sabrina", "pontos": 30.6}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Olivia Paiva", "pontos": 478.6, "atividade": "Outro"}, {"nome": "Victor Falcão", "pontos": 471.9, "atividade": "Ciclismo"}, {"nome": "Sthefany Simioni", "pontos": 469.8, "atividade": "Treinamento de Força"}], "masculino": [{"nome": "Victor Falcão", "pontos": 471.9, "atividade": "Ciclismo"}, {"nome": "Daniel Silva", "pontos": 261.0, "atividade": "Ciclismo"}, {"nome": "Newton Sozza", "pontos": 234.0, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Olivia Paiva", "pontos": 478.6, "atividade": "Outro"}, {"nome": "Sthefany Simioni", "pontos": 469.8, "atividade": "Treinamento de Força"}, {"nome": "Carolina Villa", "pontos": 140.6, "atividade": "Caminhada"}]}, "versatil": {"geral": [{"nome": "Caroline Nascimento", "pontos": 8}, {"nome": "Paula", "pontos": 8}, {"nome": "Gabi", "pontos": 8}], "masculino": [{"nome": "Victor Falcão", "pontos": 6}, {"nome": "Tomas", "pontos": 6}, {"nome": "Thiago Boufelli", "pontos": 4}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 8}, {"nome": "Paula", "pontos": 8}, {"nome": "Gabi", "pontos": 8}]}}, "2026-05": {"general": {"geral": [{"nome": "Victor Falcão", "pontos": 709.8}, {"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Sthefany Simioni", "pontos": 531.9}], "masculino": [{"nome": "Victor Falcão", "pontos": 709.8}, {"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Aldo", "pontos": 385.1}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 531.9}, {"nome": "Olivia Paiva", "pontos": 495.3}, {"nome": "Gabi", "pontos": 301.7}]}, "kom": {"geral": [{"nome": "Aldo", "pontos": 385.1}, {"nome": "Daniel Silva", "pontos": 353.6}, {"nome": "Sthefany Simioni", "pontos": 307.1}], "masculino": [{"nome": "Aldo", "pontos": 385.1}, {"nome": "Daniel Silva", "pontos": 353.6}, {"nome": "Thiago Boufelli", "pontos": 265.4}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 307.1}, {"nome": "Gabi", "pontos": 172.4}, {"nome": "Carolina Villa", "pontos": 170.3}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 668.4}, {"nome": "Daniel Silva", "pontos": 298.5}, {"nome": "Sthefany Simioni", "pontos": 224.9}], "masculino": [{"nome": "Victor Falcão", "pontos": 668.4}, {"nome": "Daniel Silva", "pontos": 298.5}, {"nome": "Thiago Boufelli", "pontos": 81.9}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 224.9}, {"nome": "Gabi Gomes", "pontos": 101.2}, {"nome": "Carolina Villa", "pontos": 97.5}]}, "combativo": {"geral": [{"nome": "Olivia Paiva", "pontos": 31}, {"nome": "Sthefany Simioni", "pontos": 30}, {"nome": "Victor Falcão", "pontos": 30}], "masculino": [{"nome": "Victor Falcão", "pontos": 30}, {"nome": "Daniel Silva", "pontos": 29}, {"nome": "Thiago Boufelli", "pontos": 25}], "feminino": [{"nome": "Olivia Paiva", "pontos": 31}, {"nome": "Sthefany Simioni", "pontos": 30}, {"nome": "Gabi", "pontos": 26}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Aldo", "pontos": 385.1}, {"nome": "Newton Sozza", "pontos": 177.6}], "masculino": [{"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Aldo", "pontos": 385.1}, {"nome": "Newton Sozza", "pontos": 177.6}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 135.6}, {"nome": "Sabrina", "pontos": 18.4}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 628.7, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 385.1, "atividade": "CrossFit"}, {"nome": "Olivia Paiva", "pontos": 359.0, "atividade": "Outro"}], "masculino": [{"nome": "Victor Falcão", "pontos": 628.7, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 385.1, "atividade": "CrossFit"}, {"nome": "Daniel Silva", "pontos": 267.7, "atividade": "Ciclismo"}], "feminino": [{"nome": "Olivia Paiva", "pontos": 359.0, "atividade": "Outro"}, {"nome": "Sthefany Simioni", "pontos": 307.1, "atividade": "Treinamento de Força"}, {"nome": "Gabi", "pontos": 144.2, "atividade": "Treinamento de Força"}]}, "versatil": {"geral": [{"nome": "Caroline Nascimento", "pontos": 9}, {"nome": "Gabi Gomes", "pontos": 8}, {"nome": "Gabi", "pontos": 8}], "masculino": [{"nome": "Tomas", "pontos": 7}, {"nome": "Gustavo Baldon torquato", "pontos": 5}, {"nome": "Tiago Soares", "pontos": 5}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 9}, {"nome": "Gabi Gomes", "pontos": 8}, {"nome": "Gabi", "pontos": 8}]}}, "2026-06": {"general": {"geral": [{"nome": "Sthefany Simioni", "pontos": 469.0}, {"nome": "Daniel Silva", "pontos": 445.7}, {"nome": "Victor Falcão", "pontos": 442.4}], "masculino": [{"nome": "Daniel Silva", "pontos": 445.7}, {"nome": "Victor Falcão", "pontos": 442.4}, {"nome": "Tomas", "pontos": 281.2}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 469.0}, {"nome": "Olivia Paiva", "pontos": 417.5}, {"nome": "Gabi Gomes", "pontos": 295.7}]}, "kom": {"geral": [{"nome": "Sthefany Simioni", "pontos": 345.9}, {"nome": "Tiago Soares", "pontos": 236.5}, {"nome": "Daniel Silva", "pontos": 230.3}], "masculino": [{"nome": "Tiago Soares", "pontos": 236.5}, {"nome": "Daniel Silva", "pontos": 230.3}, {"nome": "Newton Sozza", "pontos": 179.2}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 345.9}, {"nome": "Olivia Paiva", "pontos": 219.4}, {"nome": "Gabi Gomes", "pontos": 127.2}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 410.9}, {"nome": "Daniel Silva", "pontos": 215.5}, {"nome": "Olivia Paiva", "pontos": 129.9}], "masculino": [{"nome": "Victor Falcão", "pontos": 410.9}, {"nome": "Daniel Silva", "pontos": 215.5}, {"nome": "Tomas", "pontos": 55.9}], "feminino": [{"nome": "Olivia Paiva", "pontos": 129.9}, {"nome": "Sthefany Simioni", "pontos": 123.2}, {"nome": "Gabi Gomes", "pontos": 93.4}]}, "combativo": {"geral": [{"nome": "Olivia Paiva", "pontos": 23}, {"nome": "Victor Falcão", "pontos": 23}, {"nome": "Sthefany Simioni", "pontos": 23}], "masculino": [{"nome": "Victor Falcão", "pontos": 23}, {"nome": "Daniel Silva", "pontos": 20}, {"nome": "Newton Sozza", "pontos": 18}], "feminino": [{"nome": "Olivia Paiva", "pontos": 23}, {"nome": "Sthefany Simioni", "pontos": 23}, {"nome": "Gabi Gomes", "pontos": 20}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 445.7}, {"nome": "Newton Sozza", "pontos": 256.7}, {"nome": "Tiago Soares", "pontos": 236.5}], "masculino": [{"nome": "Daniel Silva", "pontos": 445.7}, {"nome": "Newton Sozza", "pontos": 256.7}, {"nome": "Tiago Soares", "pontos": 236.5}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 141.4}, {"nome": "Sabrina", "pontos": 8.1}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 378.8, "atividade": "Ciclismo"}, {"nome": "Sthefany Simioni", "pontos": 345.9, "atividade": "Treinamento de Força"}, {"nome": "Daniel Silva", "pontos": 215.5, "atividade": "Ciclismo"}], "masculino": [{"nome": "Victor Falcão", "pontos": 378.8, "atividade": "Ciclismo"}, {"nome": "Daniel Silva", "pontos": 215.5, "atividade": "Ciclismo"}, {"nome": "Newton Sozza", "pontos": 179.2, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 345.9, "atividade": "Treinamento de Força"}, {"nome": "Olivia Paiva", "pontos": 119.9, "atividade": "Ciclismo"}, {"nome": "Gabi Gomes", "pontos": 117.6, "atividade": "Treinamento Funcional"}]}, "versatil": {"geral": [{"nome": "Gabi Gomes", "pontos": 7}, {"nome": "Olivia Paiva", "pontos": 6}, {"nome": "Tomas", "pontos": 6}], "masculino": [{"nome": "Tomas", "pontos": 6}, {"nome": "Victor Falcão", "pontos": 4}, {"nome": "Thiago Boufelli", "pontos": 3}], "feminino": [{"nome": "Gabi Gomes", "pontos": 7}, {"nome": "Olivia Paiva", "pontos": 6}, {"nome": "Gabi", "pontos": 4}]}}, "__months__": [{"key": "2026-02", "label": "Fevereiro"}, {"key": "2026-03", "label": "Março"}, {"key": "2026-04", "label": "Abril"}, {"key": "2026-05", "label": "Maio"}, {"key": "2026-06", "label": "Junho"}]};let _curGenero = "geral";let _curPeriodo = "ytd";function _renderCat(){  const grid = document.getElementById("categorias-grid");  if(!grid) return;  const periodoData = _catData[_curPeriodo] || _catData["ytd"];  grid.innerHTML = "";  _catConfig.forEach(cfg => {    const card = document.createElement("div");    card.className = "categoria-card";    card.setAttribute("data-categoria", cfg.key);    const catData = periodoData[cfg.key] || {};    const data = catData[_curGenero] || [];    let podio = data.length === 0      ? "<div class='podio-empty'>Sem dados neste período</div>"      : data.slice(0,3).map((p,i) => {          const extra = p.atividade ? `<br><span style="font-size:11px;color:#999;">• ${p.atividade}</span>` : "";          return `<div class="podio-place"><div class="podio-medal">${_medals[i]}</div><div class="podio-info"><div class="podio-name">${p.nome}</div><div class="podio-points">${p.pontos}${cfg.unidade}${extra}</div></div></div>`;        }).join("");    card.innerHTML = `<div class="categoria-header"><div class="categoria-icon">${cfg.icon}</div><h3 class="categoria-title">${cfg.nome}</h3><p class="categoria-desc">${cfg.desc}</p></div><div class="categoria-podio">${podio}</div>`;    grid.appendChild(card);  });}document.querySelectorAll(".genero-btn").forEach(btn => {  btn.addEventListener("click", function(){    document.querySelectorAll(".genero-btn").forEach(b => b.classList.remove("active"));    this.classList.add("active");    _curGenero = this.getAttribute("data-genero");    _renderCat();  });});document.querySelectorAll(".periodo-btn").forEach(btn => {  btn.addEventListener("click", function(){    document.querySelectorAll(".periodo-btn").forEach(b => b.classList.remove("active"));    this.classList.add("active");    _curPeriodo = this.getAttribute("data-periodo");    _renderCat();  });});document.addEventListener("DOMContentLoaded", _renderCat);</script></div>
+                <div id="tab-classificacao"><style>.classificacao-container{padding:20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:10px;color:white;}.cat-selectors{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}.genero-selector,.periodo-selector{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}.periodo-selector{border-top:1px solid rgba(255,255,255,0.2);padding-top:12px;}.genero-btn,.periodo-btn{padding:9px 20px;border:2px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:white;border-radius:25px;cursor:pointer;font-size:14px;font-weight:600;transition:all 0.25s ease;}.genero-btn:hover,.periodo-btn:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.6);transform:translateY(-2px);}.genero-btn.active,.periodo-btn.active{background:rgba(255,255,255,0.3);border-color:white;box-shadow:0 0 20px rgba(255,255,255,0.35);transform:scale(1.05);}.cat-periodo-label{text-align:center;font-size:13px;opacity:0.75;margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;}.categorias-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:20px;}.categoria-card{background:rgba(255,255,255,0.98);border-radius:18px;padding:0;color:#333;box-shadow:0 10px 40px rgba(0,0,0,0.15);transition:all 0.3s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;}.categoria-card:hover{transform:translateY(-8px);box-shadow:0 15px 50px rgba(0,0,0,0.2);}.categoria-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--color-primary),var(--color-secondary));}.categoria-header{padding:28px 25px;text-align:center;background:linear-gradient(135deg,rgba(var(--color-rgb),0.1),rgba(var(--color-rgb),0.05));border-bottom:2px solid rgba(var(--color-rgb),0.1);}.categoria-icon{font-size:60px;line-height:1;margin-bottom:10px;display:inline-block;}.categoria-title{margin:0;font-size:17px;font-weight:700;color:var(--color-primary,#667eea);}.categoria-desc{font-size:12px;color:#999;margin:5px 0 0 0;font-weight:500;}.categoria-podio{padding:18px 22px;flex:1;display:flex;flex-direction:column;gap:10px;}.podio-place{display:flex;align-items:center;gap:12px;padding:10px 12px;background:linear-gradient(90deg,rgba(var(--color-rgb),0.08),transparent);border-left:4px solid var(--color-primary);border-radius:8px;}.podio-medal{font-size:30px;line-height:1;min-width:42px;text-align:center;}.podio-info{flex:1;min-width:0;}.podio-name{font-weight:700;color:var(--color-primary,#333);font-size:14px;word-break:break-word;margin:0;}.podio-points{font-size:12px;color:#666;margin-top:3px;font-weight:500;}.podio-empty{padding:20px;text-align:center;color:#ccc;font-size:13px;}.categoria-card[data-categoria="general"]{--color-primary:#FFD700;--color-secondary:#FFA500;--color-rgb:255,215,0;}.categoria-card[data-categoria="kom"]{--color-primary:#FF6B6B;--color-secondary:#EE5A6F;--color-rgb:255,107,107;}.categoria-card[data-categoria="velocista"]{--color-primary:#4ECDC4;--color-secondary:#44A5A2;--color-rgb:78,205,196;}.categoria-card[data-categoria="combativo"]{--color-primary:#F38181;--color-secondary:#D46A6A;--color-rgb:243,129,129;}.categoria-card[data-categoria="novato"]{--color-primary:#95E1D3;--color-secondary:#78D5C5;--color-rgb:149,225,211;}.categoria-card[data-categoria="ascensao"]{--color-primary:#A8E6CF;--color-secondary:#8DDCB8;--color-rgb:168,230,207;}.categoria-card[data-categoria="especialista"]{--color-primary:#FFD3B6;--color-secondary:#FFBC94;--color-rgb:255,211,182;}.categoria-card[data-categoria="versatil"]{--color-primary:#9A8FDB;--color-secondary:#8374C8;--color-rgb:154,143,219;}@media(max-width:768px){.categorias-grid{grid-template-columns:1fr;}.categoria-icon{font-size:48px;}.genero-btn,.periodo-btn{flex:1;min-width:80px;text-align:center;padding:8px 12px;font-size:13px;}}</style><div class="classificacao-container"><div class="cat-selectors"><div class="cat-periodo-label">Gênero</div><div class="genero-selector"><button class="genero-btn active" data-genero="geral">🌍 Geral</button><button class="genero-btn" data-genero="masculino">👨 Homens</button><button class="genero-btn" data-genero="feminino">👩 Mulheres</button></div><div class="cat-periodo-label">Período</div><div class="periodo-selector"><button class="periodo-btn active" data-periodo="ytd">📊 YTD</button><button class="periodo-btn" data-periodo="2026-02">Fevereiro</button><button class="periodo-btn" data-periodo="2026-03">Março</button><button class="periodo-btn" data-periodo="2026-04">Abril</button><button class="periodo-btn" data-periodo="2026-05">Maio</button><button class="periodo-btn" data-periodo="2026-06">Junho</button></div></div><div id="categorias-grid" class="categorias-grid"></div></div><script>const _catConfig = [  {key:"general",     nome:"Pódio Geral",            icon:"🏆", desc:"Maior pontuação acumulada",    unidade:" pts"},  {key:"kom",         nome:"Rei/Rainha da Montanha", icon:"👑", desc:"Especialista em força e HIIT", unidade:" pts"},  {key:"velocista",   nome:"Velocista",              icon:"💨", desc:"Especialista em cardio",       unidade:" pts"},  {key:"combativo",   nome:"Espírito Combativo",     icon:"🔥", desc:"Maior nº de dias treinados",   unidade:" dias"},  {key:"novato",      nome:"Melhor Novato",          icon:"👶", desc:"Melhor entre os novatos",      unidade:" pts"},  {key:"ascensao",    nome:"Ascensão Meteórica",     icon:"📈", desc:"Maior crescimento mês a mês (YTD)", unidade:" pts"},  {key:"especialista",nome:"Especialista",           icon:"🎯", desc:"Líder em sua especialidade",   unidade:" pts"},  {key:"versatil",    nome:"Treinador Versátil",     icon:"🔄", desc:"Mais tipos de treinos",        unidade:" tipos"},];const _medals = ["🥇","🥈","🥉"];const _catData = {"ytd": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 2408.0}, {"nome": "Victor Falcão", "pontos": 2325.3}, {"nome": "Sthefany Simioni", "pontos": 2063.2}], "masculino": [{"nome": "Daniel Silva", "pontos": 2408.0}, {"nome": "Victor Falcão", "pontos": 2325.3}, {"nome": "Thiago Boufelli", "pontos": 1485.3}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 2063.2}, {"nome": "Olivia Paiva", "pontos": 1825.2}, {"nome": "Gabi Gomes", "pontos": 1482.4}]}, "kom": {"geral": [{"nome": "Sthefany Simioni", "pontos": 1552.2}, {"nome": "Daniel Silva", "pontos": 1316.6}, {"nome": "Aldo", "pontos": 1242.7}], "masculino": [{"nome": "Daniel Silva", "pontos": 1316.6}, {"nome": "Aldo", "pontos": 1242.7}, {"nome": "Thiago Boufelli", "pontos": 1040.4}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 1552.2}, {"nome": "Carolina Villa", "pontos": 667.5}, {"nome": "Gabi Gomes", "pontos": 592.8}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 2187.8}, {"nome": "Daniel Silva", "pontos": 1088.2}, {"nome": "Sthefany Simioni", "pontos": 511.1}], "masculino": [{"nome": "Victor Falcão", "pontos": 2187.8}, {"nome": "Daniel Silva", "pontos": 1088.2}, {"nome": "Thiago Boufelli", "pontos": 351.9}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 511.1}, {"nome": "Gabi Gomes", "pontos": 472.3}, {"nome": "Carolina Villa", "pontos": 408.0}]}, "combativo": {"geral": [{"nome": "Victor Falcão", "pontos": 119}, {"nome": "Sthefany Simioni", "pontos": 119}, {"nome": "Olivia Paiva", "pontos": 116}], "masculino": [{"nome": "Victor Falcão", "pontos": 119}, {"nome": "Daniel Silva", "pontos": 115}, {"nome": "Thiago Boufelli", "pontos": 99}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 119}, {"nome": "Olivia Paiva", "pontos": 116}, {"nome": "Gabi Gomes", "pontos": 99}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 2408.0}, {"nome": "Aldo", "pontos": 1273.9}, {"nome": "Newton Sozza", "pontos": 1044.7}], "masculino": [{"nome": "Daniel Silva", "pontos": 2408.0}, {"nome": "Aldo", "pontos": 1273.9}, {"nome": "Newton Sozza", "pontos": 1044.7}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 812.6}, {"nome": "Sabrina", "pontos": 144.1}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 1977.2, "atividade": "Ciclismo"}, {"nome": "Sthefany Simioni", "pontos": 1552.2, "atividade": "Treinamento de Força"}, {"nome": "Aldo", "pontos": 1242.7, "atividade": "CrossFit"}], "masculino": [{"nome": "Victor Falcão", "pontos": 1977.2, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 1242.7, "atividade": "CrossFit"}, {"nome": "Daniel Silva", "pontos": 980.6, "atividade": "Ciclismo"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 1552.2, "atividade": "Treinamento de Força"}, {"nome": "Olivia Paiva", "pontos": 1196.2, "atividade": "Outro"}, {"nome": "Gabi", "pontos": 493.8, "atividade": "Treinamento de Força"}]}, "versatil": {"geral": [{"nome": "Caroline Nascimento", "pontos": 14}, {"nome": "Gabi Gomes", "pontos": 11}, {"nome": "Paula", "pontos": 11}], "masculino": [{"nome": "Tomas", "pontos": 10}, {"nome": "Daniel Silva", "pontos": 8}, {"nome": "Gustavo Baldon torquato", "pontos": 8}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 14}, {"nome": "Gabi Gomes", "pontos": 11}, {"nome": "Paula", "pontos": 11}]}}, "2026-02": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Thiago Boufelli", "pontos": 96.6}, {"nome": "Gabi Gomes", "pontos": 86.9}], "masculino": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Thiago Boufelli", "pontos": 96.6}, {"nome": "Tomas", "pontos": 73.9}], "feminino": [{"nome": "Gabi Gomes", "pontos": 86.9}, {"nome": "Olivia Paiva", "pontos": 68.1}, {"nome": "Sthefany Simioni", "pontos": 66.3}]}, "kom": {"geral": [{"nome": "Daniel Silva", "pontos": 77.3}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Sthefany Simioni", "pontos": 64.2}], "masculino": [{"nome": "Daniel Silva", "pontos": 77.3}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Thiago Boufelli", "pontos": 58.2}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 64.2}, {"nome": "Paula", "pontos": 46.8}, {"nome": "Olivia Paiva", "pontos": 38.1}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 54.7}, {"nome": "Sabrina", "pontos": 51.5}, {"nome": "Daniel Silva", "pontos": 50.5}], "masculino": [{"nome": "Victor Falcão", "pontos": 54.7}, {"nome": "Daniel Silva", "pontos": 50.5}, {"nome": "André Bifulco", "pontos": 45.3}], "feminino": [{"nome": "Sabrina", "pontos": 51.5}, {"nome": "Gabi Gomes", "pontos": 28.1}, {"nome": "Gabi", "pontos": 19.4}]}, "combativo": {"geral": [{"nome": "Thiago Boufelli", "pontos": 6}, {"nome": "Gabi Gomes", "pontos": 6}, {"nome": "Sthefany Simioni", "pontos": 6}], "masculino": [{"nome": "Thiago Boufelli", "pontos": 6}, {"nome": "Daniel Silva", "pontos": 6}, {"nome": "Tomas", "pontos": 5}], "feminino": [{"nome": "Gabi Gomes", "pontos": 6}, {"nome": "Sthefany Simioni", "pontos": 6}, {"nome": "Paula", "pontos": 5}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Sabrina", "pontos": 51.5}], "masculino": [{"nome": "Daniel Silva", "pontos": 130.9}, {"nome": "Aldo", "pontos": 67.0}, {"nome": "Newton Sozza", "pontos": 40.4}], "feminino": [{"nome": "Sabrina", "pontos": 51.5}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Aldo", "pontos": 67.0, "atividade": "CrossFit"}, {"nome": "Sthefany Simioni", "pontos": 64.2, "atividade": "Treinamento de Força"}, {"nome": "Sabrina", "pontos": 51.5, "atividade": "Caminhada"}], "masculino": [{"nome": "Aldo", "pontos": 67.0, "atividade": "CrossFit"}, {"nome": "Tomas", "pontos": 43.9, "atividade": "Corrida"}, {"nome": "Newton Sozza", "pontos": 40.4, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 64.2, "atividade": "Treinamento de Força"}, {"nome": "Sabrina", "pontos": 51.5, "atividade": "Caminhada"}, {"nome": "Gabi Gomes", "pontos": 34.6, "atividade": "Treinamento Funcional"}]}, "versatil": {"geral": [{"nome": "Paula", "pontos": 6}, {"nome": "Daniel Silva", "pontos": 5}, {"nome": "Thiago Boufelli", "pontos": 4}], "masculino": [{"nome": "Daniel Silva", "pontos": 5}, {"nome": "Thiago Boufelli", "pontos": 4}, {"nome": "Tiago Tomita", "pontos": 3}], "feminino": [{"nome": "Paula", "pontos": 6}, {"nome": "Gabi Gomes", "pontos": 4}, {"nome": "Olivia Paiva", "pontos": 4}]}}, "2026-03": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Victor Falcão", "pontos": 497.9}, {"nome": "Thiago Boufelli", "pontos": 460.1}], "masculino": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Victor Falcão", "pontos": 497.9}, {"nome": "Thiago Boufelli", "pontos": 460.1}], "feminino": [{"nome": "Gabi Gomes", "pontos": 411.6}, {"nome": "Sthefany Simioni", "pontos": 395.3}, {"nome": "Carolina Villa", "pontos": 333.2}]}, "kom": {"geral": [{"nome": "Aldo", "pontos": 393.2}, {"nome": "Sthefany Simioni", "pontos": 365.2}, {"nome": "Thiago Boufelli", "pontos": 324.8}], "masculino": [{"nome": "Aldo", "pontos": 393.2}, {"nome": "Thiago Boufelli", "pontos": 324.8}, {"nome": "Daniel Silva", "pontos": 288.9}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 365.2}, {"nome": "Caroline Nascimento", "pontos": 237.6}, {"nome": "Carolina Villa", "pontos": 200.1}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 472.4}, {"nome": "Daniel Silva", "pontos": 244.4}, {"nome": "Carolina Villa", "pontos": 133.1}], "masculino": [{"nome": "Victor Falcão", "pontos": 472.4}, {"nome": "Daniel Silva", "pontos": 244.4}, {"nome": "Tomas", "pontos": 132.0}], "feminino": [{"nome": "Carolina Villa", "pontos": 133.1}, {"nome": "Gabi Gomes", "pontos": 121.9}, {"nome": "Gabi", "pontos": 35.9}]}, "combativo": {"geral": [{"nome": "Carolina Villa", "pontos": 29}, {"nome": "Thiago Boufelli", "pontos": 29}, {"nome": "Victor Falcão", "pontos": 29}], "masculino": [{"nome": "Thiago Boufelli", "pontos": 29}, {"nome": "Victor Falcão", "pontos": 29}, {"nome": "Daniel Silva", "pontos": 27}], "feminino": [{"nome": "Carolina Villa", "pontos": 29}, {"nome": "Sthefany Simioni", "pontos": 27}, {"nome": "Gabi Gomes", "pontos": 27}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Aldo", "pontos": 393.2}, {"nome": "Gabs (Miranha)", "pontos": 298.5}], "masculino": [{"nome": "Daniel Silva", "pontos": 533.3}, {"nome": "Aldo", "pontos": 393.2}, {"nome": "Gabs (Miranha)", "pontos": 298.5}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 279.6}, {"nome": "Sabrina", "pontos": 35.5}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 415.8, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 393.2, "atividade": "CrossFit"}, {"nome": "Sthefany Simioni", "pontos": 365.2, "atividade": "Treinamento de Força"}], "masculino": [{"nome": "Victor Falcão", "pontos": 415.8, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 393.2, "atividade": "CrossFit"}, {"nome": "Newton Sozza", "pontos": 285.6, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 365.2, "atividade": "Treinamento de Força"}, {"nome": "Olivia Paiva", "pontos": 312.9, "atividade": "Outro"}, {"nome": "Caroline Nascimento", "pontos": 226.5, "atividade": "Treinamento de Força"}]}, "versatil": {"geral": [{"nome": "Tomas", "pontos": 8}, {"nome": "Gustavo Baldon torquato", "pontos": 8}, {"nome": "Gabi Gomes", "pontos": 7}], "masculino": [{"nome": "Tomas", "pontos": 8}, {"nome": "Gustavo Baldon torquato", "pontos": 8}, {"nome": "Victor Falcão", "pontos": 5}], "feminino": [{"nome": "Gabi Gomes", "pontos": 7}, {"nome": "Caroline Nascimento", "pontos": 6}, {"nome": "Carolina Villa", "pontos": 5}]}}, "2026-04": {"general": {"geral": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Victor Falcão", "pontos": 567.5}, {"nome": "Sthefany Simioni", "pontos": 539.6}], "masculino": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Victor Falcão", "pontos": 567.5}, {"nome": "Thiago Boufelli", "pontos": 388.8}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 539.6}, {"nome": "Olivia Paiva", "pontos": 478.6}, {"nome": "Carolina Villa", "pontos": 351.3}]}, "kom": {"geral": [{"nome": "Sthefany Simioni", "pontos": 469.8}, {"nome": "Daniel Silva", "pontos": 333.7}, {"nome": "Thiago Boufelli", "pontos": 247.0}], "masculino": [{"nome": "Daniel Silva", "pontos": 333.7}, {"nome": "Thiago Boufelli", "pontos": 247.0}, {"nome": "Newton Sozza", "pontos": 234.0}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 469.8}, {"nome": "Carolina Villa", "pontos": 205.0}, {"nome": "Gabi", "pontos": 147.4}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 538.6}, {"nome": "Daniel Silva", "pontos": 267.2}, {"nome": "André Bifulco", "pontos": 176.4}], "masculino": [{"nome": "Victor Falcão", "pontos": 538.6}, {"nome": "Daniel Silva", "pontos": 267.2}, {"nome": "André Bifulco", "pontos": 176.4}], "feminino": [{"nome": "Carolina Villa", "pontos": 146.3}, {"nome": "Gabi Gomes", "pontos": 105.9}, {"nome": "Gabi", "pontos": 87.0}]}, "combativo": {"geral": [{"nome": "Olivia Paiva", "pontos": 30}, {"nome": "Victor Falcão", "pontos": 30}, {"nome": "Sthefany Simioni", "pontos": 30}], "masculino": [{"nome": "Victor Falcão", "pontos": 30}, {"nome": "Daniel Silva", "pontos": 30}, {"nome": "Thiago Boufelli", "pontos": 28}], "feminino": [{"nome": "Olivia Paiva", "pontos": 30}, {"nome": "Sthefany Simioni", "pontos": 30}, {"nome": "Carolina Villa", "pontos": 25}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Newton Sozza", "pontos": 284.4}, {"nome": "Caroline Nascimento", "pontos": 256.1}], "masculino": [{"nome": "Daniel Silva", "pontos": 600.9}, {"nome": "Newton Sozza", "pontos": 284.4}, {"nome": "Aldo", "pontos": 250.1}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 256.1}, {"nome": "Sabrina", "pontos": 30.6}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Olivia Paiva", "pontos": 478.6, "atividade": "Outro"}, {"nome": "Victor Falcão", "pontos": 471.9, "atividade": "Ciclismo"}, {"nome": "Sthefany Simioni", "pontos": 469.8, "atividade": "Treinamento de Força"}], "masculino": [{"nome": "Victor Falcão", "pontos": 471.9, "atividade": "Ciclismo"}, {"nome": "Daniel Silva", "pontos": 261.0, "atividade": "Ciclismo"}, {"nome": "Newton Sozza", "pontos": 234.0, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Olivia Paiva", "pontos": 478.6, "atividade": "Outro"}, {"nome": "Sthefany Simioni", "pontos": 469.8, "atividade": "Treinamento de Força"}, {"nome": "Carolina Villa", "pontos": 140.6, "atividade": "Caminhada"}]}, "versatil": {"geral": [{"nome": "Caroline Nascimento", "pontos": 8}, {"nome": "Paula", "pontos": 8}, {"nome": "Gabi", "pontos": 8}], "masculino": [{"nome": "Victor Falcão", "pontos": 6}, {"nome": "Tomas", "pontos": 6}, {"nome": "Thiago Boufelli", "pontos": 4}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 8}, {"nome": "Paula", "pontos": 8}, {"nome": "Gabi", "pontos": 8}]}}, "2026-05": {"general": {"geral": [{"nome": "Victor Falcão", "pontos": 709.8}, {"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Sthefany Simioni", "pontos": 531.9}], "masculino": [{"nome": "Victor Falcão", "pontos": 709.8}, {"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Aldo", "pontos": 385.1}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 531.9}, {"nome": "Olivia Paiva", "pontos": 495.3}, {"nome": "Gabi", "pontos": 301.7}]}, "kom": {"geral": [{"nome": "Aldo", "pontos": 385.1}, {"nome": "Daniel Silva", "pontos": 353.6}, {"nome": "Sthefany Simioni", "pontos": 307.1}], "masculino": [{"nome": "Aldo", "pontos": 385.1}, {"nome": "Daniel Silva", "pontos": 353.6}, {"nome": "Thiago Boufelli", "pontos": 265.4}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 307.1}, {"nome": "Gabi", "pontos": 172.4}, {"nome": "Carolina Villa", "pontos": 170.3}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 668.4}, {"nome": "Daniel Silva", "pontos": 298.5}, {"nome": "Sthefany Simioni", "pontos": 224.9}], "masculino": [{"nome": "Victor Falcão", "pontos": 668.4}, {"nome": "Daniel Silva", "pontos": 298.5}, {"nome": "Thiago Boufelli", "pontos": 81.9}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 224.9}, {"nome": "Gabi Gomes", "pontos": 101.2}, {"nome": "Carolina Villa", "pontos": 97.5}]}, "combativo": {"geral": [{"nome": "Olivia Paiva", "pontos": 31}, {"nome": "Sthefany Simioni", "pontos": 30}, {"nome": "Victor Falcão", "pontos": 30}], "masculino": [{"nome": "Victor Falcão", "pontos": 30}, {"nome": "Daniel Silva", "pontos": 29}, {"nome": "Thiago Boufelli", "pontos": 25}], "feminino": [{"nome": "Olivia Paiva", "pontos": 31}, {"nome": "Sthefany Simioni", "pontos": 30}, {"nome": "Gabi", "pontos": 26}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Aldo", "pontos": 385.1}, {"nome": "Newton Sozza", "pontos": 177.6}], "masculino": [{"nome": "Daniel Silva", "pontos": 652.1}, {"nome": "Aldo", "pontos": 385.1}, {"nome": "Newton Sozza", "pontos": 177.6}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 135.6}, {"nome": "Sabrina", "pontos": 18.4}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 628.7, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 385.1, "atividade": "CrossFit"}, {"nome": "Olivia Paiva", "pontos": 359.0, "atividade": "Outro"}], "masculino": [{"nome": "Victor Falcão", "pontos": 628.7, "atividade": "Ciclismo"}, {"nome": "Aldo", "pontos": 385.1, "atividade": "CrossFit"}, {"nome": "Daniel Silva", "pontos": 267.7, "atividade": "Ciclismo"}], "feminino": [{"nome": "Olivia Paiva", "pontos": 359.0, "atividade": "Outro"}, {"nome": "Sthefany Simioni", "pontos": 307.1, "atividade": "Treinamento de Força"}, {"nome": "Gabi", "pontos": 144.2, "atividade": "Treinamento de Força"}]}, "versatil": {"geral": [{"nome": "Caroline Nascimento", "pontos": 9}, {"nome": "Gabi Gomes", "pontos": 8}, {"nome": "Gabi", "pontos": 8}], "masculino": [{"nome": "Tomas", "pontos": 7}, {"nome": "Gustavo Baldon torquato", "pontos": 5}, {"nome": "Tiago Soares", "pontos": 5}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 9}, {"nome": "Gabi Gomes", "pontos": 8}, {"nome": "Gabi", "pontos": 8}]}}, "2026-06": {"general": {"geral": [{"nome": "Sthefany Simioni", "pontos": 530.0}, {"nome": "Victor Falcão", "pontos": 495.3}, {"nome": "Daniel Silva", "pontos": 490.8}], "masculino": [{"nome": "Victor Falcão", "pontos": 495.3}, {"nome": "Daniel Silva", "pontos": 490.8}, {"nome": "Tomas", "pontos": 328.4}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 530.0}, {"nome": "Olivia Paiva", "pontos": 470.3}, {"nome": "Gabi Gomes", "pontos": 365.7}]}, "kom": {"geral": [{"nome": "Sthefany Simioni", "pontos": 345.9}, {"nome": "Olivia Paiva", "pontos": 272.3}, {"nome": "Tiago Soares", "pontos": 272.2}], "masculino": [{"nome": "Tiago Soares", "pontos": 272.2}, {"nome": "Daniel Silva", "pontos": 263.1}, {"nome": "Tomas", "pontos": 191.3}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 345.9}, {"nome": "Olivia Paiva", "pontos": 272.3}, {"nome": "Gabi Gomes", "pontos": 150.3}]}, "velocista": {"geral": [{"nome": "Victor Falcão", "pontos": 453.7}, {"nome": "Daniel Silva", "pontos": 227.7}, {"nome": "Sthefany Simioni", "pontos": 184.2}], "masculino": [{"nome": "Victor Falcão", "pontos": 453.7}, {"nome": "Daniel Silva", "pontos": 227.7}, {"nome": "Tomas", "pontos": 55.9}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 184.2}, {"nome": "Olivia Paiva", "pontos": 129.9}, {"nome": "Gabi Gomes", "pontos": 115.1}]}, "combativo": {"geral": [{"nome": "Olivia Paiva", "pontos": 26}, {"nome": "Victor Falcão", "pontos": 26}, {"nome": "Sthefany Simioni", "pontos": 26}], "masculino": [{"nome": "Victor Falcão", "pontos": 26}, {"nome": "Daniel Silva", "pontos": 23}, {"nome": "Tomas", "pontos": 20}], "feminino": [{"nome": "Olivia Paiva", "pontos": 26}, {"nome": "Sthefany Simioni", "pontos": 26}, {"nome": "Gabi Gomes", "pontos": 23}]}, "novato": {"geral": [{"nome": "Daniel Silva", "pontos": 490.8}, {"nome": "Tiago Soares", "pontos": 281.6}, {"nome": "Newton Sozza", "pontos": 256.7}], "masculino": [{"nome": "Daniel Silva", "pontos": 490.8}, {"nome": "Tiago Soares", "pontos": 281.6}, {"nome": "Newton Sozza", "pontos": 256.7}], "feminino": [{"nome": "Caroline Nascimento", "pontos": 141.4}, {"nome": "Sabrina", "pontos": 8.1}]}, "ascensao": {"geral": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "masculino": [{"nome": "Victor Falcão", "pontos": 443.2}, {"nome": "Daniel Silva", "pontos": 402.4}, {"nome": "Thiago Boufelli", "pontos": 363.6}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 329.0}, {"nome": "Gabi Gomes", "pontos": 324.7}, {"nome": "Carolina Villa", "pontos": 309.6}]}, "especialista": {"geral": [{"nome": "Victor Falcão", "pontos": 421.6, "atividade": "Ciclismo"}, {"nome": "Sthefany Simioni", "pontos": 345.9, "atividade": "Treinamento de Força"}, {"nome": "Daniel Silva", "pontos": 227.7, "atividade": "Ciclismo"}], "masculino": [{"nome": "Victor Falcão", "pontos": 421.6, "atividade": "Ciclismo"}, {"nome": "Daniel Silva", "pontos": 227.7, "atividade": "Ciclismo"}, {"nome": "Newton Sozza", "pontos": 179.2, "atividade": "Treinamento de Força"}], "feminino": [{"nome": "Sthefany Simioni", "pontos": 345.9, "atividade": "Treinamento de Força"}, {"nome": "Gabi Gomes", "pontos": 140.7, "atividade": "Treinamento Funcional"}, {"nome": "Olivia Paiva", "pontos": 119.9, "atividade": "Ciclismo"}]}, "versatil": {"geral": [{"nome": "Gabi Gomes", "pontos": 7}, {"nome": "Olivia Paiva", "pontos": 6}, {"nome": "Tomas", "pontos": 6}], "masculino": [{"nome": "Tomas", "pontos": 6}, {"nome": "Victor Falcão", "pontos": 5}, {"nome": "Tiago Soares", "pontos": 3}], "feminino": [{"nome": "Gabi Gomes", "pontos": 7}, {"nome": "Olivia Paiva", "pontos": 6}, {"nome": "Gabi", "pontos": 4}]}}, "__months__": [{"key": "2026-02", "label": "Fevereiro"}, {"key": "2026-03", "label": "Março"}, {"key": "2026-04", "label": "Abril"}, {"key": "2026-05", "label": "Maio"}, {"key": "2026-06", "label": "Junho"}]};let _curGenero = "geral";let _curPeriodo = "ytd";function _renderCat(){  const grid = document.getElementById("categorias-grid");  if(!grid) return;  const periodoData = _catData[_curPeriodo] || _catData["ytd"];  grid.innerHTML = "";  _catConfig.forEach(cfg => {    const card = document.createElement("div");    card.className = "categoria-card";    card.setAttribute("data-categoria", cfg.key);    const catData = periodoData[cfg.key] || {};    const data = catData[_curGenero] || [];    let podio = data.length === 0      ? "<div class='podio-empty'>Sem dados neste período</div>"      : data.slice(0,3).map((p,i) => {          const extra = p.atividade ? `<br><span style="font-size:11px;color:#999;">• ${p.atividade}</span>` : "";          return `<div class="podio-place"><div class="podio-medal">${_medals[i]}</div><div class="podio-info"><div class="podio-name">${p.nome}</div><div class="podio-points">${p.pontos}${cfg.unidade}${extra}</div></div></div>`;        }).join("");    card.innerHTML = `<div class="categoria-header"><div class="categoria-icon">${cfg.icon}</div><h3 class="categoria-title">${cfg.nome}</h3><p class="categoria-desc">${cfg.desc}</p></div><div class="categoria-podio">${podio}</div>`;    grid.appendChild(card);  });}document.querySelectorAll(".genero-btn").forEach(btn => {  btn.addEventListener("click", function(){    document.querySelectorAll(".genero-btn").forEach(b => b.classList.remove("active"));    this.classList.add("active");    _curGenero = this.getAttribute("data-genero");    _renderCat();  });});document.querySelectorAll(".periodo-btn").forEach(btn => {  btn.addEventListener("click", function(){    document.querySelectorAll(".periodo-btn").forEach(b => b.classList.remove("active"));    this.classList.add("active");    _curPeriodo = this.getAttribute("data-periodo");    _renderCat();  });});document.addEventListener("DOMContentLoaded", _renderCat);</script></div>
             </div>
         </div>
         
         <footer>
-            <p>Atualizado em 25/06/2026 às 23:49</p>
+            <p>Atualizado em 27/06/2026 às 00:07</p>
             <p>Tembici Rats Challenge • GymRats Analytics</p>
         </footer>
     </div>
